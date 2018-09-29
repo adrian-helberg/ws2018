@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.simonharrer.graphviz" version "0.0.1"
 }
 
 group 'de.haw'
