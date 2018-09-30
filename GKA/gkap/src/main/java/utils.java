@@ -1,3 +1,7 @@
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
+
 import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
@@ -9,6 +13,9 @@ import java.util.regex.Pattern;
  * @author Adrian Helberg
  */
 final class utils {
+    // Current graph instance
+    public static Graph graph;
+
     /**
      * Imports a file with given name and converts it into a dot file
      * @param fileName File to import
@@ -29,17 +36,17 @@ final class utils {
 
     /**
      * Converts *.gka file to *.dot file
-     * @param file File to convert
+     * @param inputFile File to convert
      */
-    private static void convertToDot(File file) {
+    private static void convertToDot(File inputFile) {
         String dir = "I:\\git\\ws2018\\GKA\\gkap\\src\\main\\graphviz\\";
         File dotDirectory = new File(dir);
-        String dotFileName = file.getName().replaceFirst("[.][^.]+$", "") + ".dot";
+        String dotFileName = inputFile.getName().replaceFirst("[.][^.]+$", "") + ".dot";
+        File outputFile;
 
-        // We need two scanners here; One for detection whether graph is directed or undirected,
-        // one for processing each line (first scanner would skip first line on using nextLine())
-        try (Scanner scanner = new Scanner(file, "ISO-8859-1")) {
 
+        try {
+            // Create dot file
             boolean isCreated = dotDirectory.mkdir();
             if (isCreated) {
                 System.out.println("Created 'graphviz' directory");
@@ -49,49 +56,28 @@ final class utils {
                 throw new IOException("Unable to create 'graphviz' directory");
             }
 
-            File dotFile = new File(dir + File.separator + dotFileName);
-            if (dotFile.exists()) {
-                dotFile.delete();
+            outputFile = new File(dir + File.separator + dotFileName);
+            if (outputFile.exists()) {
+                outputFile.delete();
                 System.out.println("Deleted existing file");
             }
 
-            isCreated = dotFile.createNewFile();
+            isCreated = outputFile.createNewFile();
             if (isCreated) {
-                System.out.println("Created new File: " + dotFile.getPath());
+                System.out.println("Created new File: " + outputFile.getPath());
             } else {
                 throw new IOException("Unable to create new file");
             }
 
-            FileWriter writer = new FileWriter(dotFile);
-            Matcher matcher;
-            // Search for numbers
-            String regex = "\\d+";
-            Pattern pattern = Pattern.compile(regex);
+            // File writer for writing output file while processing input file
+            FileWriter writer = new FileWriter(outputFile, true);
 
-            // Initially check whether input graph is directed or undirected
-            boolean directed;
-            if (scanner.hasNext()) {
-                String firstLine = scanner.nextLine();
-                directed = firstLine.contains("->");
+            // Process graph orientation
+            writer.write(isGraphDirected(inputFile) ? "digraph {" : "graph {");
+            writer.write(System.lineSeparator());
 
-                writer.write(directed ? "digraph {" : "graph {");
-                writer.write(System.lineSeparator());
-
-                processAttributes(writer, pattern, firstLine);
-
-                writer.write(System.lineSeparator());
-            } else {
-                throw new IOException(file.getName() + " is empty.");
-            }
-
-            // Process input file line by line
-            while (scanner.hasNext()) {
-                String line = scanner.nextLine();
-
-                processAttributes(writer, pattern, line);
-
-                writer.write(System.lineSeparator());
-            }
+            // Process attributes as notes, edges, labels and weights
+            processAttributes(inputFile, outputFile, writer);
 
             writer.write("}");
             writer.close();
@@ -101,24 +87,191 @@ final class utils {
         }
     }
 
-    private static void processAttributes(FileWriter writer, Pattern pattern, String firstLine) throws IOException {
+    /**
+     * Process input file sign by sign to build up graph by specific pattern
+     * <name node1>[ -> <name node2>][(edge name)][: <edgeweight>]; as directed graph
+     * <name node1>[ -- <name node2>][(edge name)][: <edgeweight>]; as undirected graph
+     * Examples:
+     *      node
+     *      node (name)
+     *      node1 -- node2
+     *      node1 -> node2
+     *      node1 -- node2 (name)
+     *      node1 -- node2 :weight
+     * @param inputFile Input *.gka file
+     * @param outputFile Output *.dot file
+     */
+    private static void processAttributes(File inputFile, File outputFile, FileWriter writer) {
+        String node1 = null;
+        String node2 = null;
+        String edge = null;
+        String name = null;
+        String weight = null;
+
+        Pattern pattern;
         Matcher matcher;
-        if (firstLine.contains(":")) {
-            String[] lineParts = firstLine.split(":");
 
-            if (lineParts.length != 2) {
-                throw new IOException("input file has wrong formatted line");
+        // Final string to be written in output file
+        StringBuilder sb = new StringBuilder();
+
+        // Use auto-closable scanner for processing file
+        try (Scanner scanner = new Scanner(inputFile, "ISO-8859-1")) {
+
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                // Remove white spaces
+                line = line.replaceAll("\\s+","");
+                if (line.isEmpty()) continue;
+
+                boolean containsEdge = line.contains("->") || line.contains("--");
+                if (containsEdge) {
+                    // If there is an edge, there must be two nodes
+                    edge = line.contains("->") ? "->" : "--";
+                    pattern = regexAllUpToLiteral(edge);
+
+                    matcher = pattern.matcher(line);
+                    if (matcher.find()) {
+                        // Write node1
+                        sb.append(matcher.group());
+                        sb.append(edge);
+                    }
+
+                    boolean containsWeightOrName = line.contains("(") || line.contains(":");
+                    if (containsWeightOrName) {
+                        if (line.contains(":")) {
+                            // Contains weight
+                            pattern = regexAllBetweenLiterals(edge, ":");
+
+                            matcher = pattern.matcher(line);
+                            if (matcher.find()) {
+                                // Write node2
+                                sb.append(matcher.group(1));
+                            }
+
+                            pattern = regexAllAfterLiteral(":");
+
+                            matcher = pattern.matcher(line);
+                            applyLabeling(matcher, sb);
+                        } else {
+                            // Contains name
+                            pattern = regexAllBetweenLiterals(edge, "\\(");
+
+                            matcher = pattern.matcher(line);
+                            if (matcher.find()) {
+                                // Write node2
+                                sb.append(matcher.group(1));
+                            }
+
+                            pattern = regexAllBetweenLiterals("\\(", "\\)");
+
+                            matcher = pattern.matcher(line);
+                            applyLabeling(matcher, sb);
+                        }
+                    } else {
+                        pattern = regexAllAfterLiteral(edge);
+
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            // Write node2
+                            sb.append(matcher.group(1).replaceAll(";", ""));
+                        }
+                    }
+
+                } else {
+                    // No edge -> single node
+                    if (line.contains("(")) {
+                        pattern = regexAllUpToLiteral("\\(");
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            // Write node1
+                            sb.append(matcher.group());
+                        }
+                        // Labeled node
+                        pattern = regexAllBetweenLiterals("\\(", "\\)");
+                        matcher = pattern.matcher(line);
+                        applyLabeling(matcher, sb);
+                    } else {
+                        // Write node1
+                        sb.append(line.replaceAll(";",""));
+                    }
+                }
+
+                // End of line
+                sb.append(";");
+                sb.append(System.lineSeparator());
+
+                // Finally write line into output file
+                writer.write(sb.toString());
+                sb.setLength(0);
             }
 
-            writer.write(lineParts[0]);
-
-            matcher = pattern.matcher(lineParts[1]);
-            if (matcher.find()) {
-                writer.write("[label=\"" + matcher.group() + "\"]");
-                writer.write(";");
-            }
-        } else {
-            writer.write(firstLine);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    private static void applyLabeling(Matcher matcher, StringBuilder sb) {
+        if (matcher.find()) {
+            String value = matcher.group(1).replaceAll(";", "");
+            if (value.isEmpty()) {
+                sb.append("[label=0]");
+            } else {
+                // Write label
+                sb.append("[label=");
+                sb.append(matcher.group(1).replaceAll(";", ""));
+                sb.append("]");
+            }
+        }
+    }
+
+    /**
+     * Return a compiled regex pattern that matches 'all up to a specific given literal'
+     * @param literal Literal
+     * @return Compiled regex pattern
+     */
+    private static Pattern regexAllUpToLiteral(String literal) {
+        return Pattern.compile(".+?(?=" + literal + ")");
+    }
+
+    /**
+     * Return a compiled regex pattern that matches 'all after specific given literal'
+     * @param literal Literal
+     * @return Compiled regex pattern
+     */
+    private static Pattern regexAllAfterLiteral(String literal) {
+        return Pattern.compile(literal + "(.*)");
+    }
+
+    /**
+     * Return a compiled regex pattern that matches 'all between two specific given literals'
+     * @param literal1 First literal
+     * @param literal2 Second literal
+     * @return Compiled regex pattern
+     */
+    private static Pattern regexAllBetweenLiterals(String literal1, String literal2) {
+        return Pattern.compile("(?<=" + literal1 + ")(.*)(?=" + literal2 + ")");
+    }
+
+    /**
+     * Check is a graph in a given file is directed or undirected
+     * @param inputFile Input graph
+     * @return True if directed, false otherwise
+     */
+    private static boolean isGraphDirected(File inputFile) {
+        // Use auto-closable scanner for processing file
+        try (Scanner scanner = new Scanner(inputFile, "ISO-8859-1")) {
+
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                if (line.contains("->") || line.contains("--")) {
+                    return line.contains("->");
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

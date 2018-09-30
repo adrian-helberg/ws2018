@@ -22,4 +22,7 @@ v4--v2[label=11];
 v7--v4[label=11];
 v2--s[label=14];
 v3--v4[label=14];
+v8--v9[label=5];
+v8--v10[label=7];
+v9--v10[label=4];
 }
