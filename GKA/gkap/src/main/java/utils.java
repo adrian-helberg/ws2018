@@ -1,7 +1,4 @@
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DirectedMultigraph;
-import org.jgrapht.graph.DirectedWeightedMultigraph;
-import org.jgrapht.graph.WeightedMultigraph;
+import org.jgrapht.graph.*;
 import org.jgrapht.io.*;
 
 import java.io.*;
@@ -33,8 +30,9 @@ final class utils {
         }
     }
 
-    static void importGraph(String fileName) {
+    static AbstractBaseGraph importGraph(String fileName) {
         try {
+
             // Use ClassLoader for accessing files
             Class cls = Class.forName("utils");
             ClassLoader cl = cls.getClassLoader();
@@ -44,16 +42,23 @@ final class utils {
             EdgeProvider<String, DefaultEdge> ep = (f, t, l, attrs) -> new DefaultEdge();
             ComponentUpdater<String> cu = (v, attr) -> {};
             DOTImporter<String, DefaultEdge> importer = new DOTImporter<>(vp, ep, cu);
-            DirectedMultigraph<String, DefaultEdge> result =
-                    new DirectedMultigraph<>(DefaultEdge.class);
 
-            importer.importGraph(result, file);
+            AbstractBaseGraph graph = null;
+            if (isGraphDirected(file)) {
+                graph = new DirectedWeightedPseudograph<>(DefaultEdge.class);
+            } else {
+                graph = new WeightedPseudograph<>(DefaultEdge.class);
+            }
 
-            System.out.println(result);
+            importer.importGraph(graph, file);
+            return graph;
 
         } catch (ClassNotFoundException | ImportException e) {
             e.printStackTrace();
         }
+
+        // Something went wrong
+        return null;
     }
 
     /**
