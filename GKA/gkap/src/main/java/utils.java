@@ -1,6 +1,8 @@
-import org.jgrapht.Graph;
-import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DirectedMultigraph;
+import org.jgrapht.graph.DirectedWeightedMultigraph;
+import org.jgrapht.graph.WeightedMultigraph;
+import org.jgrapht.io.*;
 
 import java.io.*;
 import java.util.Objects;
@@ -13,14 +15,11 @@ import java.util.regex.Pattern;
  * @author Adrian Helberg
  */
 final class utils {
-    // Current graph instance
-    public static Graph graph;
-
     /**
-     * Imports a file with given name and converts it into a dot file
+     * Reads a gka file with given name and converts it into a dot file
      * @param fileName File to import
      */
-    static void importGraph(String fileName) {
+    static void readGKAFile(String fileName) {
         try {
             // Use ClassLoader for accessing files
             Class cls = Class.forName("utils");
@@ -30,6 +29,29 @@ final class utils {
             convertToDot(file);
 
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void importGraph(String fileName) {
+        try {
+            // Use ClassLoader for accessing files
+            Class cls = Class.forName("utils");
+            ClassLoader cl = cls.getClassLoader();
+            File file = new File("src/main/graphviz/" + fileName + ".dot");
+
+            VertexProvider<String> vp = (label, attr) -> label;
+            EdgeProvider<String, DefaultEdge> ep = (f, t, l, attrs) -> new DefaultEdge();
+            ComponentUpdater<String> cu = (v, attr) -> {};
+            DOTImporter<String, DefaultEdge> importer = new DOTImporter<>(vp, ep, cu);
+            DirectedMultigraph<String, DefaultEdge> result =
+                    new DirectedMultigraph<>(DefaultEdge.class);
+
+            importer.importGraph(result, file);
+
+            System.out.println(result);
+
+        } catch (ClassNotFoundException | ImportException e) {
             e.printStackTrace();
         }
     }
@@ -210,6 +232,11 @@ final class utils {
         }
     }
 
+    /**
+     * Handles name or weight labeling
+     * @param matcher Regex matcher
+     * @param sb Stringbuilder with appended labeling
+     */
     private static void applyLabeling(Matcher matcher, StringBuilder sb) {
         if (matcher.find()) {
             String value = matcher.group(1).replaceAll(";", "");
