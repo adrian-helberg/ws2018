@@ -1,24 +1,26 @@
 import org.jgrapht.graph.*;
 import org.jgrapht.io.*;
-
 import java.io.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Utils for managing files
+ * Utils for managing import, export and files
+ *
  * @author Adrian Helberg
  */
 final class utils {
     /**
-     * Reads a gka file with given name and converts it into a dot file
+     * Reads gka file with given name and converts it into a dot file
      * @param fileName File to import
      */
     static void readGKAFile(String fileName) {
         try {
-            // Use ClassLoader for accessing files
+            // Use ClassLoader for accessing resource files
             Class cls = Class.forName("utils");
             ClassLoader cl = cls.getClassLoader();
             File file = new File(Objects.requireNonNull(cl.getResource(fileName + ".gka")).getFile());
@@ -30,58 +32,48 @@ final class utils {
         }
     }
 
+    /**
+     * Imports a graph from given dot file into JGraphT data-structure
+     * @param fileName Dot file to be imported from
+     * @return Successfully generated JGraphT graph or null otherwise
+     */
     static AbstractBaseGraph importGraph(String fileName) {
+        // Relative path because outside of resource folder due to graphviz visualization
+        File file = new File("src/main/graphviz/" + fileName + ".dot");
+
+        // Graph object to be passed to DOTImporter
+        AbstractBaseGraph<String, DefaultWeightedEdge> graph = isGraphDirected(file)
+                ? new DirectedWeightedPseudograph<>(DefaultWeightedEdge.class)
+                : new WeightedPseudograph<>(DefaultWeightedEdge.class);
+
+        // Provider for DOTImporter, Access to vertices, edges and attributes
+        DOTImporter<String, DefaultWeightedEdge> importer = new DOTImporter<>(
+                (l, a) -> l,
+                (f, t, l, a) -> {
+                    DefaultWeightedEdge edge = new DefaultWeightedEdge();
+                    if (a.containsKey("weight")) graph.setEdgeWeight(edge, Double.parseDouble(l));
+                    return edge;
+                });
+
         try {
-
-            // Use ClassLoader for accessing files
-            Class cls = Class.forName("utils");
-            ClassLoader cl = cls.getClassLoader();
-            File file = new File("src/main/graphviz/" + fileName + ".dot");
-
-            VertexProvider<String> vp = (label, attr) -> label;
-            EdgeProvider<String, DefaultEdge> ep = (f, t, l, attrs) -> new DefaultEdge();
-            ComponentUpdater<String> cu = (v, attr) -> {};
-            DOTImporter<String, DefaultEdge> importer = new DOTImporter<>(vp, ep, cu);
-
-            AbstractBaseGraph graph = null;
-            if (isGraphDirected(file)) {
-                graph = new DirectedWeightedPseudograph<>(DefaultEdge.class);
-            } else {
-                graph = new WeightedPseudograph<>(DefaultEdge.class);
-            }
-
+            // JGraphT import writes into graph object
             importer.importGraph(graph, file);
-            return graph;
 
-        } catch (ClassNotFoundException | ImportException e) {
+        } catch (ImportException e) {
             e.printStackTrace();
         }
 
-        // Something went wrong
-        return null;
+        return graph;
     }
 
-    /**
-     * Converts *.gka file to *.dot file
-     * @param inputFile File to convert
-     */
-    private static void convertToDot(File inputFile) {
-        String dir = "I:\\git\\ws2018\\GKA\\gkap\\src\\main\\graphviz\\";
+    static boolean exportGraph(AbstractBaseGraph graph, String fileName) {
+        String dir = "src/main/graphviz/";
         File dotDirectory = new File(dir);
-        String dotFileName = inputFile.getName().replaceFirst("[.][^.]+$", "") + ".dot";
+        String dotFileName = fileName + ".dot";
         File outputFile;
 
-
         try {
-            // Create dot file
-            boolean isCreated = dotDirectory.mkdir();
-            if (isCreated) {
-                System.out.println("Created 'graphviz' directory");
-            } else if (dotDirectory.exists()) {
-                System.out.println("'graphviz' directory exists");
-            } else {
-                throw new IOException("Unable to create 'graphviz' directory");
-            }
+            createDirectory(dotDirectory);
 
             outputFile = new File(dir + File.separator + dotFileName);
             if (outputFile.exists()) {
@@ -89,7 +81,60 @@ final class utils {
                 System.out.println("Deleted existing file");
             }
 
-            isCreated = outputFile.createNewFile();
+            boolean isCreated = outputFile.createNewFile();
+            if (isCreated) {
+                System.out.println("Created new File: " + outputFile.getPath());
+            } else {
+                throw new IOException("Unable to create new file");
+            }
+
+            // File writer for writing output file while processing input file
+            FileWriter writer = new FileWriter(outputFile, true);
+
+            ComponentAttributeProvider<String> edgeAttributeProvider =
+                    e -> {
+                        Map<String, Attribute> map = new LinkedHashMap<>();
+                        map.put("label", DefaultAttribute.createAttribute(e));
+                        return map;
+                    };
+
+            GraphExporter<String, DefaultWeightedEdge> exporter = new DOTExporter<String, DefaultWeightedEdge>(
+                    new IntegerComponentNameProvider<>(),
+                    null,
+                    null,
+                    edgeAttributeProvider,
+                    null
+            );
+            exporter.exportGraph(graph, writer);
+
+            writer.close();
+
+        } catch (IOException | ExportException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    /**
+     * Converts given gka file to dot file
+     * @param inputFile File to be converted
+     */
+    private static void convertToDot(File inputFile) {
+        String dir = "src/main/graphviz/";
+        File dotDirectory = new File(dir);
+        String dotFileName = inputFile.getName().replaceFirst("[.][^.]+$", "") + ".dot";
+        File outputFile;
+
+        try {
+            createDirectory(dotDirectory);
+
+            outputFile = new File(dir + File.separator + dotFileName);
+            if (outputFile.exists()) {
+                outputFile.delete();
+                System.out.println("Deleted existing file");
+            }
+
+            boolean isCreated = outputFile.createNewFile();
             if (isCreated) {
                 System.out.println("Created new File: " + outputFile.getPath());
             } else {
@@ -115,17 +160,33 @@ final class utils {
     }
 
     /**
+     * Creates directory for graphviz files
+     * @param dotDirectory Directory to be created
+     * @throws IOException If creation fails
+     */
+    private static void createDirectory(File dotDirectory) throws IOException {
+        if (dotDirectory.mkdir()) {
+            System.out.println("Created 'graphviz' directory");
+        } else if (dotDirectory.exists()) {
+            System.out.println("'graphviz' directory exists");
+        } else {
+            throw new IOException("Unable to create 'graphviz' directory");
+        }
+    }
+
+    /**
      * Process input file sign by sign to build up graph by specific pattern
      * <name node1>[ -> <name node2>][(edge name)][: <edgeweight>]; as directed graph
      * <name node1>[ -- <name node2>][(edge name)][: <edgeweight>]; as undirected graph
      * Examples:
-     *      node
-     *      node (name)
-     *      node1 -- node2
-     *      node1 -> node2
-     *      node1 -- node2 (name)
-     *      node1 -- node2 :weight
-     * @param inputFile Input *.gka file
+     * node
+     * node (name)
+     * node1 -- node2
+     * node1 -> node2
+     * node1 -- node2 (name)
+     * node1 -- node2 :weight
+     *
+     * @param inputFile  Input *.gka file
      * @param outputFile Output *.dot file
      */
     private static void processAttributes(File inputFile, File outputFile, FileWriter writer) {
@@ -147,7 +208,7 @@ final class utils {
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
                 // Remove white spaces
-                line = line.replaceAll("\\s+","");
+                line = line.replaceAll("\\s+", "");
                 if (line.isEmpty()) continue;
 
                 boolean containsEdge = line.contains("->") || line.contains("--");
@@ -178,7 +239,7 @@ final class utils {
                             pattern = regexAllAfterLiteral(":");
 
                             matcher = pattern.matcher(line);
-                            applyLabeling(matcher, sb);
+                            applyLabeling(matcher, sb, true);
                         } else {
                             // Contains name
                             pattern = regexAllBetweenLiterals(edge, "\\(");
@@ -192,7 +253,7 @@ final class utils {
                             pattern = regexAllBetweenLiterals("\\(", "\\)");
 
                             matcher = pattern.matcher(line);
-                            applyLabeling(matcher, sb);
+                            applyLabeling(matcher, sb, false);
                         }
                     } else {
                         pattern = regexAllAfterLiteral(edge);
@@ -216,10 +277,10 @@ final class utils {
                         // Labeled node
                         pattern = regexAllBetweenLiterals("\\(", "\\)");
                         matcher = pattern.matcher(line);
-                        applyLabeling(matcher, sb);
+                        applyLabeling(matcher, sb, false);
                     } else {
                         // Write node1
-                        sb.append(line.replaceAll(";",""));
+                        sb.append(line.replaceAll(";", ""));
                     }
                 }
 
@@ -238,19 +299,26 @@ final class utils {
     }
 
     /**
-     * Handles name or weight labeling
-     * @param matcher Regex matcher
-     * @param sb Stringbuilder with appended labeling
+     * Handles labeling
+     * @param matcher    Regex matcher
+     * @param sb         StringBuilder with appended labeling
+     * @param isWeighted True for weight labeling false otherwise
      */
-    private static void applyLabeling(Matcher matcher, StringBuilder sb) {
+    private static void applyLabeling(Matcher matcher, StringBuilder sb, boolean isWeighted) {
         if (matcher.find()) {
+            // Remove semicolon (line ending in dot file)
             String value = matcher.group(1).replaceAll(";", "");
-            if (value.isEmpty()) {
-                sb.append("[label=0]");
-            } else {
-                // Write label
+            if (!value.isEmpty()) {
+                // Write attributes
                 sb.append("[label=");
-                sb.append(matcher.group(1).replaceAll(";", ""));
+                sb.append(value);
+
+
+                if (isWeighted) {
+                    sb.append(", weight=");
+                    sb.append(value);
+                }
+
                 sb.append("]");
             }
         }
@@ -285,7 +353,7 @@ final class utils {
     }
 
     /**
-     * Check is a graph in a given file is directed or undirected
+     * Check whether graph in given file is directed or undirected
      * @param inputFile Input graph
      * @return True if directed, false otherwise
      */
@@ -305,5 +373,31 @@ final class utils {
         }
 
         return false;
+    }
+
+    /**
+     * Replaces German umlauts with corresponding usages
+     * @param orig Original string
+     * @return String after replacing all umlauts
+     */
+    private static String replaceUmlauts(String orig) {
+        // All umlauts
+        String[][] umlauts = {
+                {"Ä", "Ae"},
+                {"Ü", "Ue"},
+                {"Ö", "Oe"},
+                {"ä", "ae"},
+                {"ü", "ue"},
+                {"ö", "oe"},
+                {"ß", "ss"}
+        };
+
+        String result = orig;
+
+        for (String[] replacement : umlauts) {
+            result = result.replace(replacement[0], replacement[1]);
+        }
+
+        return result;
     }
 }
