@@ -1,0 +1,8 @@
+\select@language {german}
+\beamer@sectionintoc {1}{a)}{2}{0}{1}
+\beamer@sectionintoc {2}{b)}{5}{0}{2}
+\beamer@sectionintoc {3}{c)}{6}{0}{3}
+\beamer@sectionintoc {4}{d)}{13}{0}{4}
+\beamer@sectionintoc {5}{e)}{14}{0}{5}
+\beamer@sectionintoc {6}{a) - Teil II}{15}{0}{6}
+\beamer@sectionintoc {7}{b)}{16}{0}{7}

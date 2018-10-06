@@ -1,0 +1,345 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[english,german]{babel} 
+\usepackage{listings} 
+\usepackage{listings-golang}
+\usepackage{tikz}
+
+\usepackage[absolute,overlay]{textpos}
+  \setlength{\TPHorizModule}{1mm}
+  \setlength{\TPVertModule}{1mm}
+
+\titlegraphic{\includegraphics[scale=0.3]{logoHaw.png}}
+\title{
+	\textit{BW2 Praktikum} \\
+	\textbf{\\ \"Ubungsblatt 1 - Gruppe 1}
+}
+\author{Adrian Helberg}
+\date{\today}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\begin{document}
+\lstset{
+    frame=single,
+    basicstyle=\footnotesize,
+    keywordstyle=\color{blue},
+    showstringspaces=false, 
+    stringstyle=\color{mygreen},
+    tabsize=4,
+    language=Golang
+}
+
+\maketitle
+
+\section{a)}
+\begin{frame}
+\frametitle{a)}
+
+\begin{quote}
+Welche Produkte und Dienstleistungen bietet Dirt Bikes an? 
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{20pt}
+\item Motorr\"ader vom Typ ``Offroad'', eigene Marke
+\begin{itemize}
+\item Verschiedene Gr\"oßen, Distanzklassen
+\item Enduro 250, 550
+\item Moto 300, 450
+\end{itemize}
+\item Ersatzteil- und Servicegesch\"aft
+\item Garantiereparaturen
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{a)}
+
+\begin{quote}
+Wie viele Typen von Produkten und Dienstleistungen sind für die Kunden verfügbar?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{12pt}
+\item Motorräder, Ersatzteile als
+\begin{itemize}
+\item Sachgut $\rightarrow$ Konsumgut $\rightarrow$ Gebrauchsgut
+\end{itemize}
+\item Service, Garantie als
+\begin{itemize}
+\item Dienstleistung $\rightarrow$ Konsumptiv $\rightarrow$ Produktbegleitend
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{a)}
+
+\begin{quote}
+Welches sind die wichtigsten Produkte für das Unternehmen?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{14pt}
+
+\item Enduro 250
+\begin{itemize}
+\item \$3250 St\"uckpreis $\rightarrow$ 2195x verkauft 2017
+\end{itemize}
+
+\item Enduro 550
+\begin{itemize}
+\item \$7600 St\"uckpreis $\rightarrow$ 3647x verkauft 2017
+\end{itemize}
+
+\item Moto 300
+\begin{itemize}
+\item \$4295 St\"uckpreis $\rightarrow$ 2627x verkauft 2017
+\end{itemize}
+
+\item Moto 450
+\begin{itemize}
+\item \$8995 St\"uckpreis $\rightarrow$ 923x verkauft 2017
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+\section{b)}
+\begin{frame}
+\frametitle{b)}
+
+\begin{quote}
+Wie vertreibt das Unternehmen seine Produkte?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{14pt}
+\item Kein direkter Verkauf an Einzelhandelskunden
+\begin{itemize}
+\item Netzwerk von 40 H\"andlern
+\item Unabh\"angige H\"andler f\"ur \"Ubersee (Europa)
+\end{itemize}
+\item Motorr\"ader, Ersatzteile und Service (einschließlich Garantiereparaturen) können nur von einem autorisierten, zertifizierten H\"andler bezogen werden
+\item Bei Kunden außerhalb eines Bereichs von 50 Meilen, k\"onnen 
+\begin{itemize}
+\item Motorr\"ader durch einen zertifizierten, unabhängigen Motorradh\"andler gekauft werden
+\item Ersatzteile direkt bei Dirt Bikes erstanden werden (Verifizierung n\"otig)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{c)}
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Welches sind die wert- und mengenm\"aßig wichtigsten Zulieferteile, die Dirt Bikes von Lieferanten bezieht?
+\end{quote}
+
+\begin{figure}
+\includegraphics[scale=0.34]{pivot_itemNO_quantity.PNG}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Welches sind die wert- und mengenm\"aßig wichtigsten Zulieferteile, die Dirt Bikes von Lieferanten bezieht?
+\end{quote}
+
+\begin{figure}
+\includegraphics[scale=0.34]{pivot_itemNO_costs.PNG}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Welches sind die wert- und mengenm\"aßig wichtigsten Zulieferteile, die Dirt Bikes von Lieferanten bezieht?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{14pt}
+\item Mengenm\"aßig wichtigste Zulieferteile (absteigend):
+\begin{itemize}
+\item Airframe fasteners (Hulkey Fasteners)
+\item Shielded Cable/ft.(Fast-Tie Aerospace)
+\item Shielded Cable/ft.(Steelpin Inc.)
+\end{itemize}
+\item Wertm\"aßig wichtigste Zulieferteile: 
+\begin{itemize}
+\item Airframe fasteners (Hulkey Fasteners)
+\item Machined Valve (Steelpin Inc.)
+\item Control Panel (Alum Sheeting)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Gibt es bei den Produkten über das Jahr auff\"allige Schwankungen? (Kosten)
+\end{quote}
+
+\begin{figure}
+\includegraphics[scale=0.34]{pivot_itemNO_costs2.PNG}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Gibt es bei den Produkten über das Jahr auff\"allige Schwankungen? (Menge)
+\end{quote}
+
+\begin{figure}
+\includegraphics[scale=0.34]{pivot_itemNO_quantity2.PNG}
+\caption{Bestellkosten pro Item Nummer (in \$)}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Gibt es bei den Produkten über das Jahr auff\"allige Schwankungen?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{30pt}
+\item Signifikante Ausschl\"age der Kosten gibt es bei den Produkten ``Airframe fasteners'' und ``Control Panel''
+\item Signifikante Ausschl\"age der Menge gibt es bei den Produkten ``Airframe fasteners'' und ``Shielded Cable/ft.''
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{c)}
+
+\begin{quote}
+Welches sind die wichtigsten Lieferanten für Dirt Bikes?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{14pt}
+\item ``Hulky Fasteners''
+\begin{itemize}
+\item \$3.358.200 Bestellkosten f\"ur ``Airframe fasteners''
+\end{itemize}
+\item ``Steelpin Inc.''
+\begin{itemize}
+\item 896.400 Stck. Bestellmenge f\"ur ``Shielded Cable-ft.''
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{d)}
+\begin{frame}
+\frametitle{d)}
+
+\begin{quote}
+Wie ist die aktuelle finanzielle Situation des Unternehmens (Aus Sicht des Jahres 2018)?
+\end{quote}
+
+\begin{figure}
+\includegraphics[scale=0.34]{financials.PNG}
+\end{figure}
+
+\begin{itemize}
+\setlength{\itemsep}{14pt}
+\item ``Dirt Bikes'' ist in einer schlechten finanziellen Situation:
+\begin{itemize}
+\item Sinkender Bruttoertrag
+\item Sinkendes Betriebsergebnisses
+\item Sinkendes Nettoeinkommen
+\end{itemize}
+\item Es ist zu erwarten, dass sich die finanzielle Situation im Jahre 2018 weiter verschlechtern wird
+\end{itemize}
+
+\end{frame}
+
+\section{e)}
+\begin{frame}
+\frametitle{e)}
+
+\begin{quote}
+Welche Informationssysteme wären für ein Unternehmen wie Dirt Bikes am wichtigsten?
+\end{quote}
+
+\begin{itemize}
+\item Betriebliches Informationssystem
+\begin{itemize}
+\setlength{\itemsep}{10pt}
+\item Enterprise Architecture Frameworks (EAF)
+\item Enterprise Resource Planning (ERP)
+\item Supply Chain Management (SCM)
+\item Customer Relationship Management (CRM)
+\item E-Business-Systeme (E-Commerce)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{a) - Teil II}
+\begin{frame}
+\frametitle{a) - Teil II}
+
+\begin{quote}
+Auf welche Weise k\"onnte Dirt Bikes das Internet zur Steigerung des internationalen Absatzes nutzen?
+\end{quote}
+
+\begin{itemize}
+\item Das Internet k\"onnte zum elektronischen Handel (``E-Commerce'') genutzt werden
+\begin{itemize}
+\setlength{\itemsep}{8pt}
+\item Keine Verz\"ogerung des Kaufprozesses
+\item Einsicht der Produktpalette online
+\item Online-Bezahlung
+\item 24-Std. Service
+\item Kundenn\"ahe
+\item Geringe Transaktionskosten
+\item Kundenkontakt auf der ganzen Welt
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{b)}
+\begin{frame}
+\frametitle{b)}
+
+\begin{quote}
+Mit welchen Merkmalen sollte die Website ausgestattet werden, um Käufer aus verschiedenen Zielländern anzuziehen?
+\end{quote}
+
+\begin{itemize}
+\setlength{\itemsep}{6pt}
+\item Website in englischer Sprache
+\item Qualit\"at der Waren hervorheben
+\item Sensible Daten sch\"utzen
+\item Offenes Auftreten
+\item Informationen \"uber das Unternehmen liefern
+\item Verschiedene Landes-Dom\"anen  zur richtigen regionalen Ausrichtung
+\item Internationale Kontaktm\"oglichkeiten
+\item Uneingeschr\"ankte Verf\"ugbarkeit
+\end{itemize}
+
+\end{frame}
+
+\end{document}
