@@ -4,10 +4,13 @@
 %%%
 %%% @author Adrian Helberg
 %%%-------------------------------------------------------------------
--module('App').
+-module(app).
 -author("Main").
 
 %% API
--export([test_initialize/0]).
+-export([start/0]).
 
-test_initialize() -> io:fwrite("Initialize Test").
+start() ->
+  spawn(server, test, []),
+  spawn(client, test, []),
+  self().

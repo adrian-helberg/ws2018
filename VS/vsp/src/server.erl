@@ -12,12 +12,25 @@
 -author("Main").
 
 %% API
--export([server/1]).
+-export([start/3, stop/1, loop/3, call/2]).
 
-server(State) ->
-  receive {requiest, Return_PID} ->
-    io:format("SERVER ~w: Client request received from ~w~n", [self(), Return_PID]),
-    NewState = State + 1,
-    Return_PID ! {hit_count, NewState},
-    server(NewState)
+start(Name, F, State) ->
+  register(Name, spawn(server, loop, [Name, F, State])).
+
+stop(Name) ->
+  exit(whereis(Name), kill).
+
+call(Name, Query) ->
+  Name ! {self(), Query},
+  receive
+    {Name, Reply} ->
+      Reply
+  end.
+
+loop(Name, F, State) ->
+  receive
+    {Pid, Query} ->
+      {Reply, State1} = F(Query, State),
+      Pid ! {Name, Reply},
+      loop(Name, F, State1)
   end.
