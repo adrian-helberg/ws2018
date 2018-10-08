@@ -2,21 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b82316d-3fd9-470d-9e41-89d2f45dee14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Server/cmem.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server/dlq.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server/hbq.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server/server.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vshlr.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../util.erl" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/test.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/cmem.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/compile.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/dlq.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/dlq.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/hbq.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/server.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/server.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/augabe1/vsutil.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/Eingabeaufforderung.lnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/demoMSGQ.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/demoRemote.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/tut.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/util.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/vsutil.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/vsp/test.beam" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/vsp/test.beam" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/vsp/test.beam" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/vsp/test.beam" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vsutil.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/cmem.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/dlq.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/hbq.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/server.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/client.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/client_func.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/client_starter.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/cmem.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/cmemr.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/dlq.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/hbq.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/server.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/server_func.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/server_starter.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/util.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/aufg1/vsutil.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vshlr.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vshlr.erl" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,74 +64,72 @@
     <session id="1330602947">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="4" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erl" value="2510" />
+          <entry key="bat" value="609" />
+          <entry key="erl" value="5668" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Erlang" value="2510" />
+          <entry key="Batch" value="609" />
+          <entry key="Erlang" value="5668" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="beam" value="21" />
+          <entry key="bat" value="22" />
+          <entry key="beam" value="28" />
           <entry key="cfg" value="5" />
-          <entry key="erl" value="17" />
-          <entry key="txt" value="2" />
+          <entry key="erl" value="61" />
+          <entry key="lnk" value="2" />
+          <entry key="log" value="2" />
+          <entry key="txt" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="BEAM" value="19" />
-          <entry key="Erlang" value="17" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="BEAM" value="26" />
+          <entry key="Batch" value="21" />
+          <entry key="Erlang" value="61" />
+          <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.erl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client.erl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server.erl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/vshlr.erl">
+        <entry file="file://$PROJECT_DIR$/src/augabe1/server.erl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="592">
+              <caret line="55" column="31" lean-forward="true" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/augabe1/dlq.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/augabe1/cmem.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -118,6 +148,11 @@
       <find>dlq</find>
       <find>getmessages</find>
       <find>getnessage</find>
+      <find>spawn</find>
+      <find>rpc</find>
+      <find>X</find>
+      <find>time</find>
+      <find>now2string</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,6 +180,24 @@
         <option value="$PROJECT_DIR$/src/app.erl" />
         <option value="$PROJECT_DIR$/src/server.erl" />
         <option value="$PROJECT_DIR$/src/vshlr.erl" />
+        <option value="$PROJECT_DIR$/src/Learning/compile_server.bat" />
+        <option value="$PROJECT_DIR$/src/Learning/compile.bat" />
+        <option value="$PROJECT_DIR$/src/Learning/client.erl" />
+        <option value="$PROJECT_DIR$/src/Learning/server.bat" />
+        <option value="$PROJECT_DIR$/src/Learning/hbq.bat" />
+        <option value="$PROJECT_DIR$/src/Learning/server.erl" />
+        <option value="$PROJECT_DIR$/src/Learning/hbq.erl" />
+        <option value="$PROJECT_DIR$/src/Test/test.bat" />
+        <option value="$PROJECT_DIR$/src/Test/test.erl" />
+        <option value="$PROJECT_DIR$/src/test/event.erl" />
+        <option value="$PROJECT_DIR$/src/test/test.erl" />
+        <option value="$PROJECT_DIR$/src/augabe1/hbq.erl" />
+        <option value="$PROJECT_DIR$/src/augabe1/server.bat" />
+        <option value="$PROJECT_DIR$/src/augabe1/dlq.bat" />
+        <option value="$PROJECT_DIR$/src/augabe1/dlq.erl" />
+        <option value="$PROJECT_DIR$/src/augabe1/compile.bat" />
+        <option value="$PROJECT_DIR$/src/augabe1/cmem.erl" />
+        <option value="$PROJECT_DIR$/src/augabe1/server.erl" />
       </list>
     </option>
   </component>
@@ -183,13 +236,19 @@
               <item name="vsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="vsp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="augabe1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="vsp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vsp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vsp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -201,7 +260,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538838887767" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539010132458" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -210,7 +269,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\git\ws2018\VS\vsp\src\augabe1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\git\ws2018\VS\vsp\src\augabe1" />
+      <recent name="I:\git\ws2018\VS\vsp\src\Learning" />
       <recent name="I:\git\ws2018\VS\vsp\src" />
     </key>
   </component>
@@ -226,7 +290,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Batch.dlq">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -235,6 +299,39 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="compile" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="vsp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="I:\git\ws2018\VS\vsp\src\augabe1" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="compile.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dlq" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="vsp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="I:\git\ws2018\VS\vsp\src\augabe1" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="dlq.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="vsp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="I:\git\ws2018\VS\vsp\src\augabe1" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="server.bat" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -281,6 +378,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Erlang Application.test.main" />
+      <item itemvalue="Batch.server" />
+      <item itemvalue="Batch.dlq" />
+      <item itemvalue="Batch.compile" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Batch.dlq" />
+        <item itemvalue="Batch.compile" />
+        <item itemvalue="Batch.server" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -298,16 +408,19 @@
       <workItem from="1538818076431" duration="161000" />
       <workItem from="1538818288023" duration="1594000" />
       <workItem from="1538829725200" duration="8870000" />
+      <workItem from="1538905040068" duration="1657000" />
+      <workItem from="1538906717624" duration="20484000" />
+      <workItem from="1539000928892" duration="8646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14381000" />
+    <option name="totallyTimeSpent" value="45168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15458423" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -315,15 +428,15 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -336,183 +449,211 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.cfg" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/client.cfg">
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/cmem.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/cmemr.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/dlq.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/util.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/vsutil.beam" />
+    <entry file="file://$PROJECT_DIR$/src/test.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Client/client.erl" />
+    <entry file="file://$PROJECT_DIR$/src/client.beam" />
+    <entry file="file://$PROJECT_DIR$/src/app.beam" />
+    <entry file="file://$PROJECT_DIR$/src/server.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/server_starter.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/server_func.beam" />
+    <entry file="file://$PROJECT_DIR$/src/vshlr.erl" />
+    <entry file="file://$PROJECT_DIR$/src/server.erl" />
+    <entry file="file://$PROJECT_DIR$/src/client.erl" />
+    <entry file="file://$PROJECT_DIR$/src/app.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/compile_server.bat" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/hbq.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/compile.bat" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/client.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Server/server.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Server/hbq.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Server/dlq.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/hbq.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/server.beam" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/server.erl" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/hbq.bat" />
+    <entry file="file://$PROJECT_DIR$/src/Test/test.bat" />
+    <entry file="file://$PROJECT_DIR$/src/Learning/hbq.erl" />
+    <entry file="file://$PROJECT_DIR$/src/demo/tut.erl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demo/demoMSGQ.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/Readme.txt">
+    <entry file="file://$PROJECT_DIR$/src/test/event.erl" />
+    <entry file="file://$PROJECT_DIR$/src/demo/Eingabeaufforderung.lnk">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/augabe1/hbq.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Learning/server.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/test.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demo/demoRemote.beam">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="BEAM" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/augabe1/dlq.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://I:/Erlang/erl9.1/lib/stdlib-3.4.2/src/calendar.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <caret line="326" selection-start-line="326" selection-end-line="326" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/server.cfg">
+    <entry file="file://$PROJECT_DIR$/src/demo/util.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="9" />
+        <state relative-caret-position="-544">
+          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/server.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/cmem.erl">
+    <entry file="file://$PROJECT_DIR$/src/demo/vsutil.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/hbq.erl">
+    <entry file="file://$PROJECT_DIR$/src/vsutil.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="70" />
+        <state relative-caret-position="198">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/dlq.erl">
+    <entry file="file://$PROJECT_DIR$/src/demo/demoRemote.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="70" />
+        <state relative-caret-position="544">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/client_func.beam">
+    <entry file="file://$PROJECT_DIR$/src/demo/demoMSGQ.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/client_starter.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/cmem.beam">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/cmemr.beam">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/dlq.beam">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/hbq.beam">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/server_func.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/server_starter.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/util.beam">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/aufg1/vsutil.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="884">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/client.erl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/server.erl">
+    <entry file="file://$PROJECT_DIR$/src/demo/Readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.beam">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="BEAM" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.erl">
+    <entry file="file://$PROJECT_DIR$/src/augabe1/vsutil.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="238">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.erl">
+    <entry file="file://$PROJECT_DIR$/src/augabe1/compile.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.erl">
+    <entry file="file://$PROJECT_DIR$/src/augabe1/server.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vshlr.erl">
+    <entry file="file://$PROJECT_DIR$/src/augabe1/dlq.erl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/augabe1/cmem.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/augabe1/server.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="55" column="31" lean-forward="true" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
         </state>
       </provider>
     </entry>
