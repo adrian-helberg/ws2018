@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  6 OCT 2018 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  11 OCT 2018 15:54
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1129,7 +1129,12 @@ Grid set 16 x 16 = 22.7622pt x 17.07166pt
 \TP@tbargs=\toks48
 \TP@prevdepth=\dimen267
 TextBlockOrigin set to 0pt x 0pt
-) (presentation.aux)
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 17.
+
+(presentation.aux)
 \openout1 = `presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -1437,10 +1442,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 22133 strings out of 493333
- 417799 string characters out of 3146981
- 500858 words of memory out of 3000000
- 25120 multiletter control sequences out of 15000+200000
+ 22134 strings out of 493333
+ 417804 string characters out of 3146981
+ 500932 words of memory out of 3000000
+ 25121 multiletter control sequences out of 15000+200000
  13245 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,59p,807b,559s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1450,7 +1455,7 @@ ublic/amsfonts/cm/cmss12.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmssbx10
 e1/public/amsfonts/cm/cmssi12.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cms
 y10.pfb><D:/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/MikTex/fo
 nts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on presentation.pdf (16 pages, 308127 bytes).
+Output written on presentation.pdf (16 pages, 308170 bytes).
 PDF statistics:
  501 PDF objects out of 1000 (max. 8388607)
  40 named destinations out of 1000 (max. 500000)
