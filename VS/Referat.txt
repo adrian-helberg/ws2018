@@ -1,0 +1,5 @@
+* 15 Minuten
+* Selbst gefertigte, schriftliche Ausarbeitung
+* Führung einer Diskussionsleitung (Gespräch)
+* Frei vorgetragen
+* Vortrag und Ausarbeitung der Ergebnisse (Beschreibung des Lösungsweges vom Entwurf bis zur Implementierung) elektronisch übermitteln
