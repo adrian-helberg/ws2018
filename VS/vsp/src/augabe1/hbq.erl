@@ -5,3 +5,5 @@
 -module(hbq).
 %% API
 -export([]).
+
+initHBQ

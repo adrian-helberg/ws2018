@@ -48,21 +48,18 @@ call(Name, Query) ->
 %%% Server loop
 loop() ->
   receive
+    % Abfragen einer Nachricht
     {PID, getmessages} ->
-      {reply,
-        [ 15,
-          "0-pclient@KI-VS-<0.64.0>-KLC: 15te_Nachricht. C Out: 29.04 08:43:24,871| HBQ In: 29.04 08:43:24,879|  DLQ Out: 29.04 08:43:35,551| ",
-          {1430,289804,872001},
-          {1430,289804,880000},
-          {1430,289804,880003},
-          {1430,289815,551001}],
-        true},
-        loop();
-      _ ->
-        io:format("~p server received something~n", [vsutil:now2string(erlang:timestamp())]),
-        loop()
+      PID ! getmessages,
+      loop();
+    {dropmessage,[INNr,Msg,TSclientout]} ->
+      self() ! {dropmessage,[INNr,Msg,TSclientout]},
+      loop();
+    _ ->
+      io:format("~p server received something~n", [vsutil:now2string(erlang:timestamp())]),
+      loop()
   end.
 
-log(Datei,Text) ->
-  file:write_file(Datei,Text,[append]),
+log(Datei, Text) ->
+  file:write_file(Datei, Text, [append]),
   io:format("~p~n", Text).
