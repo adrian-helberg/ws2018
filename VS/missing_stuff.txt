@@ -1,3 +1,8 @@
 * Seite 3, letzter Satz evtl. weglassen
 * Seite 4, Dateinamen nicht in Klammern schreiben
 * Funktionssignaturen hinzufügen!
+* Funktionale und Nicht-funktionale Anforderungen ausformulieren (http://www.se.uni-hannover.de/priv/lehre_2004winter_seminar_software_entwurf/08_architektur-und-qualitaet.pdf)
+* Projektrisiken
+* TESTS
+* Austauschbarkeit erwähnen
+* Nach dem Sequenzdiagramm, die internen Dienste zeigen und Funktionsweisen erklären
