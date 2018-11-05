@@ -1,2 +1,1 @@
 \select@language {german}
-\beamer@sectionintoc {1}{Aufgabe 2}{2}{0}{1}

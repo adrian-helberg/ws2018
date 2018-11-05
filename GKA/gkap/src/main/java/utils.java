@@ -1,17 +1,21 @@
+import org.jgrapht.Graph;
+import org.jgrapht.Graphs;
 import org.jgrapht.graph.*;
 import org.jgrapht.io.*;
+import org.jgrapht.traverse.BreadthFirstIterator;
+import org.jgrapht.traverse.GraphIterator;
+
 import java.io.*;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Utils for managing import, export and files
  *
- * @author Adrian Helberg
+ * TODO:  Access edge labels through EdgeLabelProvider
+ *
+ * @author Adrian Helberg, Maximilian Janzen
  */
 final class utils {
     /**
@@ -20,14 +24,35 @@ final class utils {
      */
     static void readGKAFile(String fileName) {
         try {
-            // Use ClassLoader for accessing resource files
-            Class cls = Class.forName("utils");
-            ClassLoader cl = cls.getClassLoader();
-            File file = new File(Objects.requireNonNull(cl.getResource(fileName + ".gka")).getFile());
+            // Input
+            File file = new File(Objects.requireNonNull(utils.class.getResource(fileName)).getFile());
 
-            convertToDot(file);
+            // Output
+            String dir = "src/main/graphviz/";
+            File dotDirectory = new File(dir);
+            // Replace input extension with output extension
+            String dotFileName = file.getName().replaceFirst("[.][^.]+$", "") + ".dot";
+            File outputFile;
+            createDirectory(dotDirectory);
 
-        } catch (ClassNotFoundException e) {
+            outputFile = new File(dir + File.separator + dotFileName);
+            // Override existing file
+            deleteFile(outputFile);
+            createFile(outputFile);
+
+            FileWriter writer = new FileWriter(outputFile, true);
+
+            // Process graph orientation
+            writer.write(isGraphDirected(file) ? "digraph {" : "graph {");
+            writer.write(System.lineSeparator());
+
+            // Process attributes as notes, edges, labels and weights
+            processAttributes(file, outputFile, writer);
+
+            writer.write("}");
+            writer.close();
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -39,21 +64,48 @@ final class utils {
      */
     static AbstractBaseGraph importGraph(String fileName) {
         // Relative path because outside of resource folder due to graphviz visualization
-        File file = new File("src/main/graphviz/" + fileName + ".dot");
+        File file = new File("src/main/graphviz/" + fileName);
 
         // Graph object to be passed to DOTImporter
-        AbstractBaseGraph<String, DefaultWeightedEdge> graph = isGraphDirected(file)
-                ? new DirectedWeightedPseudograph<>(DefaultWeightedEdge.class)
-                : new WeightedPseudograph<>(DefaultWeightedEdge.class);
+        AbstractBaseGraph graph;
+        DOTImporter importer;
+        boolean isWeighted = isDOTGraphWeighted(file);
+        boolean isDirected = isDOTGraphDirected(file);
 
-        // Provider for DOTImporter, Access to vertices, edges and attributes
-        DOTImporter<String, DefaultWeightedEdge> importer = new DOTImporter<>(
-                (l, a) -> l,
-                (f, t, l, a) -> {
-                    DefaultWeightedEdge edge = new DefaultWeightedEdge();
-                    if (a.containsKey("weight")) graph.setEdgeWeight(edge, Double.parseDouble(l));
-                    return edge;
-                });
+        if (isWeighted) {
+            if (isDirected) {
+                graph = new DirectedWeightedPseudograph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
+            } else {
+                graph = new WeightedPseudograph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
+            }
+
+            // Provider for DOTImporter, Access to vertices, edges and attributes
+            importer = new DOTImporter<>(
+                    (vertex, a) -> vertex,
+                    (from, to, weight, obj) -> {
+                        DefaultWeightedEdge edge = new DefaultWeightedEdge();
+                        if (obj.containsKey("weight")) {
+                            graph.setEdgeWeight(edge, Double.parseDouble(weight));
+                        } else {
+                            System.out.println("[ERROR]: Weight missing");
+                        }
+                        return edge;
+                    });
+        } else {
+            if (isDirected) {
+                graph = new DirectedPseudograph<String, DefaultEdge>(DefaultEdge.class);
+            } else {
+                graph = new Pseudograph<String, DefaultEdge>(DefaultEdge.class);
+            }
+
+            // Provider for DOTImporter, Access to vertices, edges and attributes
+            importer = new DOTImporter<>(
+                    (vertex, a) -> vertex,
+                    (from, to, weight, obj) -> {
+                        DefaultEdge edge = new DefaultEdge();
+                        return edge;
+                    });
+        }
 
         try {
             // JGraphT import writes into graph object
@@ -66,7 +118,12 @@ final class utils {
         return graph;
     }
 
-    static boolean exportGraph(AbstractBaseGraph graph, String fileName) {
+    /**
+     * Exports a JGraphT graph to a file with given file name
+     * @param graph JGraphT graph
+     * @param fileName Given file name
+     */
+    static void exportGraph(AbstractBaseGraph graph, String fileName) {
         String dir = "src/main/graphviz/";
         File dotDirectory = new File(dir);
         String dotFileName = fileName + ".dot";
@@ -91,67 +148,41 @@ final class utils {
             // File writer for writing output file while processing input file
             FileWriter writer = new FileWriter(outputFile, true);
 
-            ComponentAttributeProvider<String> edgeAttributeProvider =
-                    e -> {
-                        Map<String, Attribute> map = new LinkedHashMap<>();
-                        map.put("label", DefaultAttribute.createAttribute(e));
-                        return map;
-                    };
+            DOTExporter exporter;
+            boolean isWeighted = graph.getType().isWeighted();
 
-            GraphExporter<String, DefaultWeightedEdge> exporter = new DOTExporter<String, DefaultWeightedEdge>(
-                    new IntegerComponentNameProvider<>(),
-                    null,
-                    null,
-                    edgeAttributeProvider,
-                    null
-            );
+            if (isWeighted) {
+                exporter = new DOTExporter<String, DefaultWeightedEdge>(
+                        new StringComponentNameProvider<>(),
+                        null,
+                        null,
+                        null,
+                        (e) -> {
+                            Map<String, Attribute> map = new LinkedHashMap<>();
+                            Double weight = graph.getEdgeWeight(e);
+                            // Check whether weight has decimal place so we can generate integers OR doubles
+                            if (weight == Math.floor(weight)) {
+                                map.put("weight", DefaultAttribute.createAttribute(Integer.toString((int) graph.getEdgeWeight(e))));
+                                map.put("label", DefaultAttribute.createAttribute(Integer.toString((int) graph.getEdgeWeight(e))));
+                            } else {
+                                map.put("weight", DefaultAttribute.createAttribute(Double.toString(graph.getEdgeWeight(e))));
+                                map.put("label", DefaultAttribute.createAttribute(Double.toString(graph.getEdgeWeight(e))));
+                            }
+                            return map;
+                        }
+                );
+            } else {
+                exporter = new DOTExporter<String, DefaultEdge>(
+                        new StringComponentNameProvider<>(),
+                        null,
+                        null,
+                        null,
+                        null
+                );
+            }
+
             exporter.exportGraph(graph, writer);
 
-            writer.close();
-
-        } catch (IOException | ExportException e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-    /**
-     * Converts given gka file to dot file
-     * @param inputFile File to be converted
-     */
-    private static void convertToDot(File inputFile) {
-        String dir = "src/main/graphviz/";
-        File dotDirectory = new File(dir);
-        String dotFileName = inputFile.getName().replaceFirst("[.][^.]+$", "") + ".dot";
-        File outputFile;
-
-        try {
-            createDirectory(dotDirectory);
-
-            outputFile = new File(dir + File.separator + dotFileName);
-            if (outputFile.exists()) {
-                outputFile.delete();
-                System.out.println("Deleted existing file");
-            }
-
-            boolean isCreated = outputFile.createNewFile();
-            if (isCreated) {
-                System.out.println("Created new File: " + outputFile.getPath());
-            } else {
-                throw new IOException("Unable to create new file");
-            }
-
-            // File writer for writing output file while processing input file
-            FileWriter writer = new FileWriter(outputFile, true);
-
-            // Process graph orientation
-            writer.write(isGraphDirected(inputFile) ? "digraph {" : "graph {");
-            writer.write(System.lineSeparator());
-
-            // Process attributes as notes, edges, labels and weights
-            processAttributes(inputFile, outputFile, writer);
-
-            writer.write("}");
             writer.close();
 
         } catch (IOException e) {
@@ -159,47 +190,92 @@ final class utils {
         }
     }
 
+    static boolean BFS(AbstractBaseGraph graph, String start, String end) {
+        GraphIterator graphIterator = new BreadthFirstIterator(graph, start);
+
+        while(graphIterator.hasNext()) {
+            Object vertex = graphIterator.next();
+            if (vertex.equals(end)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     /**
-     * Creates directory for graphviz files
-     * @param dotDirectory Directory to be created
+     * Creates directory
+     *
+     * @param directory Directory to be created
      * @throws IOException If creation fails
      */
-    private static void createDirectory(File dotDirectory) throws IOException {
-        if (dotDirectory.mkdir()) {
-            System.out.println("Created 'graphviz' directory");
-        } else if (dotDirectory.exists()) {
-            System.out.println("'graphviz' directory exists");
+    private static void createDirectory(File directory) throws IOException {
+        if (directory.mkdir()) {
+            System.out.println("Create directory");
+        } else if (directory.exists()) {
+            System.out.println("Directory exists");
         } else {
-            throw new IOException("Unable to create 'graphviz' directory");
+            throw new IOException("Unable to create directory");
+        }
+    }
+
+    /**
+     * Creates new given file
+     * @param file File to be created
+     * @throws IOException If creation not successful
+     */
+    private static void createFile(File file) throws IOException {
+        boolean isCreated = file.createNewFile();
+        if (isCreated) {
+            System.out.println("Create new File: " + file.getPath());
+        } else {
+            throw new IOException("Unable to create new file");
+        }
+    }
+
+    /**
+     * Deletes a given file
+     * @param file File to be deleted
+     * @throws IOException If deletion not successful
+     */
+    private static void deleteFile(File file) throws IOException {
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Delete existing file");
+            } else {
+                throw new IOException("Unable to delete existing file: " + file.getAbsolutePath());
+            }
         }
     }
 
     /**
      * Process input file sign by sign to build up graph by specific pattern
-     * <name node1>[ -> <name node2>][(edge name)][: <edgeweight>]; as directed graph
-     * <name node1>[ -- <name node2>][(edge name)][: <edgeweight>]; as undirected graph
-     * Examples:
+     * <name node1>[ -> <name node2> [(<edge name>)][: <edgeweight>]]; as directed graph
+     * <name node1>[ -- <name node2> [(<edge name>)][: <edgeweight>]]; as undirected graph
+     * Examples (every example works for undirected graphs as well):
      * node
-     * node (name)
-     * node1 -- node2
      * node1 -> node2
-     * node1 -- node2 (name)
-     * node1 -- node2 :weight
+     * node1 -> node2 (name)
+     * node1 -> node2 : weight
+     * node1 -> node2 (name) : weight
      *
      * @param inputFile  Input *.gka file
      * @param outputFile Output *.dot file
      */
     private static void processAttributes(File inputFile, File outputFile, FileWriter writer) {
-        String node1 = null;
-        String node2 = null;
-        String edge = null;
-        String name = null;
-        String weight = null;
+        // Directed or undirected
+        String edge;
+        String directedEdge = "->";
+        String undirectedEdge = "--";
+        String nameBracketOpen = "\\(";
+        String nameBracketClosed = "\\)";
+        String weightSign = ":";
 
+        // RegEx
         Pattern pattern;
         Matcher matcher;
 
-        // Final string to be written in output file
+        // Result to be written in output file
         StringBuilder sb = new StringBuilder();
 
         // Use auto-closable scanner for processing file
@@ -211,77 +287,122 @@ final class utils {
                 line = line.replaceAll("\\s+", "");
                 if (line.isEmpty()) continue;
 
-                boolean containsEdge = line.contains("->") || line.contains("--");
+                // --- EDGE
+                boolean containsEdge = line.contains(directedEdge) || line.contains(undirectedEdge);
                 if (containsEdge) {
-                    // If there is an edge, there must be two nodes
-                    edge = line.contains("->") ? "->" : "--";
-                    pattern = regexAllUpToLiteral(edge);
+                    // Set graph orientation
+                    edge = line.contains(directedEdge)
+                            ? directedEdge
+                            : undirectedEdge;
 
+                    // --- NODE 1
+                    pattern = regexAllUpToLiteral(edge);
                     matcher = pattern.matcher(line);
                     if (matcher.find()) {
-                        // Write node1
                         sb.append(matcher.group());
-                        sb.append(edge);
-                    }
-
-                    boolean containsWeightOrName = line.contains("(") || line.contains(":");
-                    if (containsWeightOrName) {
-                        if (line.contains(":")) {
-                            // Contains weight
-                            pattern = regexAllBetweenLiterals(edge, ":");
-
-                            matcher = pattern.matcher(line);
-                            if (matcher.find()) {
-                                // Write node2
-                                sb.append(matcher.group(1));
-                            }
-
-                            pattern = regexAllAfterLiteral(":");
-
-                            matcher = pattern.matcher(line);
-                            applyLabeling(matcher, sb, true);
-                        } else {
-                            // Contains name
-                            pattern = regexAllBetweenLiterals(edge, "\\(");
-
-                            matcher = pattern.matcher(line);
-                            if (matcher.find()) {
-                                // Write node2
-                                sb.append(matcher.group(1));
-                            }
-
-                            pattern = regexAllBetweenLiterals("\\(", "\\)");
-
-                            matcher = pattern.matcher(line);
-                            applyLabeling(matcher, sb, false);
-                        }
                     } else {
-                        pattern = regexAllAfterLiteral(edge);
-
-                        matcher = pattern.matcher(line);
-                        if (matcher.find()) {
-                            // Write node2
-                            sb.append(matcher.group(1).replaceAll(";", ""));
-                        }
+                        throw new IOException("Unable to find content before edge");
                     }
 
-                } else {
-                    // No edge -> single node
-                    if (line.contains("(")) {
-                        pattern = regexAllUpToLiteral("\\(");
+                    // --- EDGE
+                    sb.append(edge);
+
+                    // --- NAME, WEIGHT
+                    boolean containsName = line.contains("(") && line.contains(")");
+                    boolean containsWeight = line.contains(weightSign);
+
+                    if (containsName && containsWeight) {
+                        // --- NODE 2
+                        pattern = regexAllBetweenLiterals(edge, nameBracketOpen);
                         matcher = pattern.matcher(line);
                         if (matcher.find()) {
-                            // Write node1
                             sb.append(matcher.group());
+                        } else {
+                            throw new IOException("Unable to find content between edge and name bracket open");
                         }
-                        // Labeled node
-                        pattern = regexAllBetweenLiterals("\\(", "\\)");
+
+                        // --- NAME
+                        pattern = regexAllBetweenLiterals(nameBracketOpen, nameBracketClosed);
                         matcher = pattern.matcher(line);
-                        applyLabeling(matcher, sb, false);
+                        if (matcher.find()) {
+                            sb.append("[taillabel=\"(");
+                            sb.append(matcher.group());
+                            sb.append(")");
+                        } else {
+                            throw new IOException("Unable to find content between name brackets");
+                        }
+                        // --- WEIGHT
+                        pattern = regexAllAfterLiteral(weightSign);
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            String weight = matcher.group(1).replace(";", "");
+                            sb.append("\", headlabel=\"");
+                            sb.append(weight);
+                            sb.append("\", weight=\"");
+                            sb.append(weight);
+                            sb.append("\"]");
+                        } else {
+                            throw new IOException("Unable to find content between name bracket closed and weight sign");
+                        }
+                    } else if (containsName) {
+                        // --- NODE 2
+                        pattern = regexAllBetweenLiterals(edge, nameBracketOpen);
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            sb.append(matcher.group());
+                        } else {
+                            throw new IOException("Unable to find content between edge and name bracket open");
+                        }
+
+                        // --- NAME
+                        pattern = regexAllBetweenLiterals(nameBracketOpen, nameBracketClosed);
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            sb.append("[label=\"(");
+                            sb.append(matcher.group());
+                            sb.append(")\"]");
+                        } else {
+                            throw new IOException("Unable to find content between name brackets");
+                        }
+                    } else if (containsWeight) {
+                        // --- NODE 2
+                        pattern = regexAllBetweenLiterals(edge, weightSign);
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            sb.append(matcher.group());
+                        } else {
+                            throw new IOException("Unable to find content between edge and weight sign");
+                        }
+
+                        // --- WEIGHT
+                        pattern = regexAllAfterLiteral(weightSign);
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            String weight = matcher.group(1).replace(";", "");
+
+                            if (weight.equals("")) throw new IOException("Missing weight");
+
+                            sb.append("[label=\"");
+                            sb.append(weight);
+                            sb.append("\", weight=\"");
+                            sb.append(weight);
+                            sb.append("\"]");
+                        } else {
+                            throw new IOException("Unable to find content between name bracket closed and weight sign");
+                        }
                     } else {
-                        // Write node1
-                        sb.append(line.replaceAll(";", ""));
+                        // --- NODE 2
+                        pattern = regexAllAfterLiteral(edge);
+                        matcher = pattern.matcher(line);
+                        if (matcher.find()) {
+                            sb.append(matcher.group(1).replace(";", ""));
+                        } else {
+                            throw new IOException("Unable to find content after edge");
+                        }
                     }
+                } else {
+                    // --- NODE 1
+                    sb.append(line.replaceAll(";", ""));
                 }
 
                 // End of line
@@ -289,43 +410,17 @@ final class utils {
                 sb.append(System.lineSeparator());
 
                 // Finally write line into output file
-                writer.write(sb.toString());
+                writer.write(replaceUmlauts(sb.toString()));
                 sb.setLength(0);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * Handles labeling
-     * @param matcher    Regex matcher
-     * @param sb         StringBuilder with appended labeling
-     * @param isWeighted True for weight labeling false otherwise
-     */
-    private static void applyLabeling(Matcher matcher, StringBuilder sb, boolean isWeighted) {
-        if (matcher.find()) {
-            // Remove semicolon (line ending in dot file)
-            String value = matcher.group(1).replaceAll(";", "");
-            if (!value.isEmpty()) {
-                // Write attributes
-                sb.append("[label=");
-                sb.append(value);
-
-
-                if (isWeighted) {
-                    sb.append(", weight=");
-                    sb.append(value);
-                }
-
-                sb.append("]");
-            }
-        }
-    }
-
-    /**
      * Return a compiled regex pattern that matches 'all up to a specific given literal'
+     *
      * @param literal Literal
      * @return Compiled regex pattern
      */
@@ -335,6 +430,7 @@ final class utils {
 
     /**
      * Return a compiled regex pattern that matches 'all after specific given literal'
+     *
      * @param literal Literal
      * @return Compiled regex pattern
      */
@@ -344,6 +440,7 @@ final class utils {
 
     /**
      * Return a compiled regex pattern that matches 'all between two specific given literals'
+     *
      * @param literal1 First literal
      * @param literal2 Second literal
      * @return Compiled regex pattern
@@ -354,6 +451,7 @@ final class utils {
 
     /**
      * Check whether graph in given file is directed or undirected
+     *
      * @param inputFile Input graph
      * @return True if directed, false otherwise
      */
@@ -376,7 +474,54 @@ final class utils {
     }
 
     /**
+     * Check whether graph in given dot file is directed or undirected
+     *
+     * @param inputFile Input graph
+     * @return True if directed, false otherwise
+     */
+    private static boolean isDOTGraphDirected(File inputFile) {
+        // Use auto-closable scanner for processing file
+        try (Scanner scanner = new Scanner(inputFile, "ISO-8859-1")) {
+
+            if (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                return line.contains("digraph");
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    /**
+     * Check whether graph in given file is weighted or not
+     *
+     * @param inputFile Input graph
+     * @return True if weighted, false otherwise
+     */
+    private static boolean isDOTGraphWeighted(File inputFile) {
+        // Use auto-closable scanner for processing file
+        try (Scanner scanner = new Scanner(inputFile, "ISO-8859-1")) {
+
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                if (line.contains("->") || line.contains("--")) {
+                    return line.contains("weight");
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    /**
      * Replaces German umlauts with corresponding usages
+     *
      * @param orig Original string
      * @return String after replacing all umlauts
      */
