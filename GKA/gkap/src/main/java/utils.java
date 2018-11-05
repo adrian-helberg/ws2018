@@ -1,25 +1,24 @@
-import org.jgrapht.Graph;
-import org.jgrapht.Graphs;
+import org.jgrapht.GraphPath;
+import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.*;
 import org.jgrapht.io.*;
 import org.jgrapht.traverse.BreadthFirstIterator;
-import org.jgrapht.traverse.GraphIterator;
-
 import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Utils for managing import, export and files
+ * Utils for managing graph import, export and files
  *
- * TODO:  Access edge labels through EdgeLabelProvider
+ * TODO: Access edge labels through EdgeLabelProvider
  *
  * @author Adrian Helberg, Maximilian Janzen
  */
-final class utils {
+class utils {
     /**
      * Reads gka file with given name and converts it into a dot file
+     *
      * @param fileName File to import
      */
     static void readGKAFile(String fileName) {
@@ -59,6 +58,7 @@ final class utils {
 
     /**
      * Imports a graph from given dot file into JGraphT data-structure
+     *
      * @param fileName Dot file to be imported from
      * @return Successfully generated JGraphT graph or null otherwise
      */
@@ -120,7 +120,8 @@ final class utils {
 
     /**
      * Exports a JGraphT graph to a file with given file name
-     * @param graph JGraphT graph
+     *
+     * @param graph    JGraphT graph
      * @param fileName Given file name
      */
     static void exportGraph(AbstractBaseGraph graph, String fileName) {
@@ -190,17 +191,49 @@ final class utils {
         }
     }
 
-    static boolean BFS(AbstractBaseGraph graph, String start, String end) {
-        GraphIterator graphIterator = new BreadthFirstIterator(graph, start);
+    /**
+     * Use Breadth-First Search (BFS) to return path from source to target node
+     *
+     * @param graph Graph to be searched
+     * @param start Source node
+     * @param end   Target node
+     * @return Path from source to target node
+     */
+    static List<Object> BFS(AbstractBaseGraph graph, String start, String end, List<Object> resultingPath) {
+        if (start.equals(end)) {
+            Collections.reverse(resultingPath);
+            return resultingPath;
+        }
 
-        while(graphIterator.hasNext()) {
+        BreadthFirstIterator graphIterator = new BreadthFirstIterator(graph, start);
+        List<Object> travelledPaths = new ArrayList<>();
+
+        // edge source and target position is important
+        Object current;
+        Object target = end;
+        // Traverse the graph until target node is found
+        while (graphIterator.hasNext()) {
             Object vertex = graphIterator.next();
-            if (vertex.equals(end)) {
-                return true;
+            if (vertex.equals(target)) {
+                current = graphIterator.getParent(vertex);
+                resultingPath.add(graph.getEdge(current, vertex));
+
+                BFS(graph, start, current.toString(), resultingPath);
             }
         }
 
-        return false;
+        return resultingPath;
+    }
+
+    /**
+     * Dijkstra shortest path
+     * @param graph Graph to be processed
+     * @param start Source node
+     * @param end Target node
+     * @return Shortest path
+     */
+    static GraphPath Dijkstra(AbstractBaseGraph graph, String start, String end) {
+        return DijkstraShortestPath.findPathBetween(graph, start, end);
     }
 
     /**
@@ -221,6 +254,7 @@ final class utils {
 
     /**
      * Creates new given file
+     *
      * @param file File to be created
      * @throws IOException If creation not successful
      */
@@ -235,6 +269,7 @@ final class utils {
 
     /**
      * Deletes a given file
+     *
      * @param file File to be deleted
      * @throws IOException If deletion not successful
      */
@@ -380,7 +415,7 @@ final class utils {
                         if (matcher.find()) {
                             String weight = matcher.group(1).replace(";", "");
 
-                            if (weight.equals("")) throw new IOException("Missing weight");
+                            if (weight.equals("")) throw new IOException("Missing weight: " + inputFile);
 
                             sb.append("[label=\"");
                             sb.append(weight);
