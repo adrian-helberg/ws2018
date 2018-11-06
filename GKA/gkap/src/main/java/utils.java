@@ -206,18 +206,13 @@ class utils {
         }
 
         BreadthFirstIterator graphIterator = new BreadthFirstIterator(graph, start);
-        List<Object> travelledPaths = new ArrayList<>();
-
-        // edge source and target position is important
         Object current;
-        Object target = end;
         // Traverse the graph until target node is found
         while (graphIterator.hasNext()) {
             Object vertex = graphIterator.next();
-            if (vertex.equals(target)) {
+            if (vertex.equals(end)) {
                 current = graphIterator.getParent(vertex);
                 resultingPath.add(graph.getEdge(current, vertex));
-
                 BFS(graph, start, current.toString(), resultingPath);
             }
         }

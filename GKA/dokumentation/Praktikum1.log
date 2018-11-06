@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  29 SEP 2018 12:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  6 NOV 2018 19:56
 entering extended mode
 **./Praktikum1.tex
 (Praktikum1.tex
@@ -1198,7 +1198,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
 Here is how much of TeX's memory you used:
  16741 strings out of 493333
  309307 string characters out of 3146981
- 376433 words of memory out of 3000000
+ 376431 words of memory out of 3000000
  19974 multiletter control sequences out of 15000+200000
  7887 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1207,7 +1207,7 @@ Here is how much of TeX's memory you used:
 ublic/amsfonts/cm/cmbx12.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pf
 b><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTex/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb><D:/MikTex/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on Praktikum1.pdf (2 pages, 84546 bytes).
+Output written on Praktikum1.pdf (2 pages, 84686 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)
