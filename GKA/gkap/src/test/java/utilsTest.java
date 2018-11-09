@@ -1,7 +1,6 @@
 import org.jgrapht.graph.AbstractBaseGraph;
 import org.junit.Before;
 import org.junit.Test;
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
@@ -160,6 +159,7 @@ public class utilsTest {
      * Test Breadth-First Search (BFS)
      */
     @Test
+    // TODO: pfadlänge vergleichen!
     public void testBFS() {
         String name = "graph01";
         AbstractBaseGraph graph = utils.importGraph(name + ".dot");
@@ -193,5 +193,7 @@ public class utilsTest {
                 utils.Dijkstra(graph, source, target).toString(),
                 utils.BFS(graph, source, target, new ArrayList<>()).toString()
         );
+
+        System.out.println(utils.BFS(graph, "Celle", "Hamburg", new ArrayList<>()));
     }
 }

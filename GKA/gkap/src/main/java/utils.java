@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
  *
  * @author Adrian Helberg, Maximilian Janzen
  */
+// Utils
 class utils {
     /**
      * Reads gka file with given name and converts it into a dot file
@@ -143,7 +144,7 @@ class utils {
             if (isCreated) {
                 System.out.println("Created new File: " + outputFile.getPath());
             } else {
-                throw new IOException("Unable to create new file");
+                //throw new IOException("Unable to create new file");
             }
 
             // File writer for writing output file while processing input file
@@ -258,7 +259,7 @@ class utils {
         if (isCreated) {
             System.out.println("Create new File: " + file.getPath());
         } else {
-            throw new IOException("Unable to create new file");
+            //throw new IOException("Unable to create new file");
         }
     }
 
@@ -273,7 +274,7 @@ class utils {
             if (file.delete()) {
                 System.out.println("Delete existing file");
             } else {
-                throw new IOException("Unable to delete existing file: " + file.getAbsolutePath());
+                //throw new IOException("Unable to delete existing file: " + file.getAbsolutePath());
             }
         }
     }
