@@ -1,8 +1,6 @@
 MERGE INTO DIVISION dest
 USING (SELECT * FROM ach053.oltp_division) src
 ON (dest.ID = src.DIVID)
-WHEN MATCHED THEN UPDATE SET
-    dest.Description = src.Div_Description
 WHEN NOT MATCHED THEN
     INSERT (ID, Description)
     VALUES (src.DIVID, src.Div_Description);
@@ -10,9 +8,6 @@ WHEN NOT MATCHED THEN
 MERGE INTO PRODUCTCATEGORY dest
 USING (SELECT * FROM ach053.oltp_productcategory) src
 ON (dest.ID = src.PCID)
-WHEN MATCHED THEN UPDATE SET
-    dest.Division_ID = src.DIVID,
-    dest.Description = src.PC_Description
 WHEN NOT MATCHED THEN
     INSERT (ID, Division_ID, Description)
     VALUES (src.PCID, src.DIVID, src.PC_Description);
@@ -20,58 +15,54 @@ WHEN NOT MATCHED THEN
 MERGE INTO PRODUCT dest
 USING (SELECT * FROM ach053.oltp_product) src
 ON (dest.ID = src.ProductID)
-WHEN MATCHED THEN UPDATE SET    
-    dest.ProductCategory_ID = src.PCID,
-    dest.Description = src.ProductDescr,
-    dest.SalesPrice = src.SalesPrice,
-    dest.PurchasePrice = src.PurchasePrice
 WHEN NOT MATCHED THEN
     INSERT (ID, ProductCategory_ID, Description, SalesPrice, PurchasePrice)
     VALUES (src.ProductID, src.PCID, src.ProductDescr, src.SalesPrice, src.PurchasePrice);
     
-MERGE INTO COUNTRY dest
+MERGE INTO SALESORGANISATION dest
 USING (SELECT * FROM ach053.oltp_salesorg) src
 ON (dest.ID = src.SOID)
-WHEN MATCHED THEN UPDATE SET
-    dest.Description = src.SO_Description
 WHEN NOT MATCHED THEN
     INSERT (ID, Description)
     VALUES (src.SOID, src.SO_Description);
     
-MERGE INTO SALESORGANISATION dest
-USING (SELECT * FROM ach053.oltp_salesorg) src
-ON (dest.ID = src.SOID)
-WHEN MATCHED THEN UPDATE SET
-    dest.Country_ID = src.SOID,
-    dest.Description = src.SO_Description
-WHEN NOT MATCHED THEN
-    INSERT (ID, Country_ID, Description)
-    VALUES (src.SOID, src.SOID, src.SO_Description);
-    
 MERGE INTO CUSTOMER dest
 USING (SELECT * FROM ach053.oltp_customer) src
-ON (dest.ID = src.CustomerID)
-WHEN MATCHED THEN UPDATE SET
-    dest.SalesOrganaisation_ID = src.SOID,    
-    dest.Description = src.CustomerDescr,
-    dest.City = src.City    
+ON (dest.ID = src.CustomerID)  
 WHEN NOT MATCHED THEN
-    INSERT (ID, SalesOrganaisation_ID, Description, City)
-    VALUES (src.CustomerID, src.SOID, src.CustomerDescr, src.City);
-  
-/* TODO */  
-MERGE INTO SALES dest
-USING (SELECT * FROM ach053.oltp_customer) src
-ON (dest.ID = src.OrderNumber)
-WHEN MATCHED THEN UPDATE SET
-    dest.Product_ID = (SELECT "ID" FROM Product WHERE "ID" = 0)
-    dest.Customer_ID = src.CustomerID,
-    dest.Time = src.OrderDate,
-    dest.Revenue = 0,
-    dest.SalesQuantity = 0,
-    dest.CostGoodsSold = 0,
-    dest.Discount = 0,
-    dest.NetSales = 0,
+    INSERT (ID, SalesOrganaisation_ID, Description, City, Country)
+    VALUES (src.CustomerID, src.SOID, src.CustomerDescr, src.City, src.Country);
+    
+MERGE INTO SALESDATA dest
+USING (
+    SELECT
+        ach053.oltp_orderhead.ORDERNUMBER OrderNumber,
+        ach053.oltp_orderhead.CUSTOMERID CustomerID,
+        ach053.oltp_orderhead.ORDERDATE OrderDate,
+        ach053.oltp_orderitem.PRODUCTID ProductID,
+        ach053.oltp_orderitem.ORDERITEM OrderItem,
+        ach053.oltp_product.SALESPRICE SalesPrice,
+        ach053.oltp_product.PURCHASEPRICE PurchasePrice,
+        ach053.oltp_orderitem.SALESQUANTITY SalesQuantity,
+        ach053.oltp_orderitem.DISCOUNT Discount
+    FROM ach053.oltp_orderhead 
+    INNER JOIN ach053.oltp_orderitem 
+    ON ach053.oltp_orderhead.ordernumber = ach053.oltp_orderitem.ordernumber
+    INNER JOIN ach053.oltp_product
+    ON ach053.oltp_orderitem.PRODUCTID = ach053.oltp_product.productid
+) src
+ON (dest.ID = src.OrderNumber AND dest.Position = src.OrderItem)
 WHEN NOT MATCHED THEN
-    INSERT (ID, SalesOrganaisation_ID, Description, City)
-    VALUES (src.CustomerID, src.SOID, src.CustomerDescr, src.City);
+    INSERT (ID, Product_ID, Customer_ID, Position, "Time", Revenue, SalesQuantity, CostGoodsSold, Discount, NetSales)
+    VALUES (
+        src.OrderNumber,
+        src.ProductID, 
+        src.CustomerID,
+        src.OrderItem,
+        src.OrderDate, 
+        src.SalesQuantity * src.SalesPrice, 
+        src.SalesQuantity, 
+        src.SalesQuantity * PurchasePrice, 
+        src.Discount,
+        src.SalesQuantity * src.SalesPrice - src.Discount
+    );

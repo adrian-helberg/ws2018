@@ -1,15 +1,9 @@
-DROP TABLE Country;
-DROP TABLE SalesOrganisation;
-DROP TABLE Customer;
-DROP TABLE Division;
-DROP TABLE ProductCategory;
+DROP TABLE SalesData;
 DROP TABLE Product;
-DROP TABLE Sales;
-
-CREATE TABLE Country (
-    ID VARCHAR(255) NOT NULL CONSTRAINT PK_Country PRIMARY KEY,
-    Description VARCHAR(255) NULL
-);
+DROP TABLE ProductCategory;
+DROP TABLE Division;
+DROP TABLE Customer;
+DROP TABLE SalesOrganisation;
 
 CREATE TABLE SalesOrganisation (
     ID VARCHAR(255) NOT NULL CONSTRAINT PK_SalesOrganisation PRIMARY KEY,
@@ -21,7 +15,8 @@ CREATE TABLE Customer (
     ID INTEGER NOT NULL CONSTRAINT PK_Customer PRIMARY KEY,
     SalesOrganaisation_ID VARCHAR(255) NOT NULL CONSTRAINT FK_Customer_Salesorganisation REFERENCES SalesOrganisation(ID),
     Description VARCHAR(255) NULL,
-    City VARCHAR(255) NULL
+    City VARCHAR(255) NULL,
+    Country VARCHAR(255) NULL
 );
 
 CREATE TABLE Division (
@@ -43,14 +38,16 @@ CREATE TABLE Product (
     PurchasePrice DECIMAL NULL
 );
 
-CREATE TABLE Sales (
-    "ID" INTEGER NOT NULL CONSTRAINT PK_Sales PRIMARY KEY,
+CREATE TABLE SalesData (
+    ID INTEGER NOT NULL,
     Product_ID CHAR(10) NOT NULL CONSTRAINT FK_Sales_Product REFERENCES Product(ID),
     Customer_ID INTEGER NOT NULL CONSTRAINT FK_Sales_Customer REFERENCES Customer(ID),
+    Position INTEGER NOT NULL,
     "Time" DATE NULL,
     Revenue Decimal NULL,
     SalesQuantity INTEGER NULL,
     CostGoodsSold DECIMAL NULL,
     Discount DECIMAL NULL,
-    NetSales DECIMAL NULL
+    NetSales DECIMAL NULL,
+    CONSTRAINT PK_Sales PRIMARY KEY(ID, Position)
 );
