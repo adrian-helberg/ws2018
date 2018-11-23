@@ -36,33 +36,29 @@ WHEN NOT MATCHED THEN
 MERGE INTO SALESDATA dest
 USING (
     SELECT
-        ach053.oltp_orderhead.ORDERNUMBER OrderNumber,
-        ach053.oltp_orderhead.CUSTOMERID CustomerID,
-        ach053.oltp_orderhead.ORDERDATE OrderDate,
-        ach053.oltp_orderitem.PRODUCTID ProductID,
-        ach053.oltp_orderitem.ORDERITEM OrderItem,
-        ach053.oltp_product.SALESPRICE SalesPrice,
-        ach053.oltp_product.PURCHASEPRICE PurchasePrice,
-        ach053.oltp_orderitem.SALESQUANTITY SalesQuantity,
-        ach053.oltp_orderitem.DISCOUNT Discount
-    FROM ach053.oltp_orderhead 
-    INNER JOIN ach053.oltp_orderitem 
-    ON ach053.oltp_orderhead.ordernumber = ach053.oltp_orderitem.ordernumber
-    INNER JOIN ach053.oltp_product
-    ON ach053.oltp_orderitem.PRODUCTID = ach053.oltp_product.productid
+        CUSTOMERID AS CustomerID,
+        ORDERDATE AS OrderDate,
+        PRODUCTID AS ProductID,
+        SUM(SalesQuantity) AS SalesQuantity,
+        SUM(SalesQuantity * SalesPrice) AS Revenue,
+        SUM(SalesQuantity * ach053.oltp_product.PURCHASEPRICE) AS CostGoodsSold,
+        SUM(Discount) AS Discount,
+        SUM(SalesQuantity * ach053.oltp_product.SALESPRICE - ach053.oltp_orderitem.DISCOUNT) AS NetSales
+    FROM ach053.oltp_orderhead
+    JOIN ach053.oltp_orderitem USING (OrderNumber)
+    JOIN ach053.oltp_product USING (ProductID)
+    GROUP BY OrderDate, ProductID, CustomerID
 ) src
-ON (dest.ID = src.OrderNumber AND dest.Position = src.OrderItem)
+ON (dest.Product_ID = src.ProductID AND dest.Customer_ID = src.CustomerID AND dest."Time" = src.OrderDate)
 WHEN NOT MATCHED THEN
-    INSERT (ID, Product_ID, Customer_ID, Position, "Time", Revenue, SalesQuantity, CostGoodsSold, Discount, NetSales)
+    INSERT (Product_ID, Customer_ID, "Time", Revenue, SalesQuantity, CostGoodsSold, Discount, NetSales)
     VALUES (
-        src.OrderNumber,
         src.ProductID, 
         src.CustomerID,
-        src.OrderItem,
         src.OrderDate, 
-        src.SalesQuantity * src.SalesPrice, 
+        src.Revenue, 
         src.SalesQuantity, 
-        src.SalesQuantity * PurchasePrice, 
+        src.CostGoodsSold, 
         src.Discount,
-        src.SalesQuantity * src.SalesPrice - src.Discount
+        src.NetSales
     );
