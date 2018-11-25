@@ -1,6 +1,9 @@
-SELECT CUSTOMER.Country, EXTRACT(YEAR FROM SALESDATA."Time"), SUM(SALESDATA.NetSales), SUM(SALESDATA.SalesQuantity) FROM SALESDATA 
-INNER JOIN CUSTOMER ON SALESDATA.Customer_ID = CUSTOMER.ID
-WHERE SALESDATA."Time" >= TO_DATE('1.1.' || 2013, 'DD.MM.YYYY')
-   AND SALESDATA."Time" < TO_DATE('1.1.' || 2018, 'DD.MM.YYYY')
-GROUP BY CUSTOMER.Country, EXTRACT(YEAR FROM SALESDATA."Time")
-ORDER BY CUSTOMER.Country, EXTRACT(YEAR FROM SALESDATA."Time");
+select 
+    country, 
+    extract(year from "Time"), 
+    sum(salesquantity), 
+    sum(netsales) 
+from salesdata 
+join customer on salesdata.customer_id = customer.id
+join product on salesdata.product_id = product.id 
+group by country, extract(year from "Time");

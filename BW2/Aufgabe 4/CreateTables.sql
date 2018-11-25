@@ -39,15 +39,13 @@ CREATE TABLE Product (
 );
 
 CREATE TABLE SalesData (
-    ID INTEGER NOT NULL,
     Product_ID CHAR(10) NOT NULL CONSTRAINT FK_Sales_Product REFERENCES Product(ID),
     Customer_ID INTEGER NOT NULL CONSTRAINT FK_Sales_Customer REFERENCES Customer(ID),
-    Position INTEGER NOT NULL,
-    "Time" DATE NULL,
+    "Time" DATE NOT NULL,
     Revenue Decimal NULL,
     SalesQuantity INTEGER NULL,
     CostGoodsSold DECIMAL NULL,
     Discount DECIMAL NULL,
     NetSales DECIMAL NULL,
-    CONSTRAINT PK_Sales PRIMARY KEY(ID, Position)
+    CONSTRAINT PK_Sales PRIMARY KEY(Product_ID, Customer_ID, "Time")
 );
