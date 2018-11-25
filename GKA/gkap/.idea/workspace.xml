@@ -2,36 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85efe1b4-aeed-4ba5-a773-3341cc55fe83" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/AlgorithmusOverviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/AlgorithmusOverviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/MainApp$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/MainApp$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/MainApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/MainApp$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/RootLayoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/RootLayoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/BreadthFirstSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/BreadthFirstSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/FloydWarschall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/FloydWarschall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/GraphTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/ShortestPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/ShortestPathTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/exception/InvalidGraphException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/exception/InvalidGraphException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/model/Algorithmus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/sample/model/Algorithmus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/view/AlgorithmusOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/view/AlgorithmusOverview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/AlgorithmusOverviewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/MainApp$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/MainApp$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/MainApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/RootLayoutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Algorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/BreadthFirstSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Dijkstra.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/FloydWarschall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/GraphTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/ShortestPathAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/algorithmen/ShortestPathTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/exception/InvalidGraphException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/sample/model/Algorithmus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/view/AlgorithmusOverview.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/view/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/view/RootLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/AlgorithmusOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/AlgorithmusOverviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/RootLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/BreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/BreadthFirstSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Dijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/FloydWarschall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/FloydWarschall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/GraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/exception/InvalidGraphException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/exception/InvalidGraphException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/model/Algorithmus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/model/Algorithmus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AlgorithmusOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/AlgorithmusOverview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/AlgorithmusOverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/BreadthFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/BreadthFirstSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/FloydWarschall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/FloydWarschall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/ShortestPathAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/ShortestPathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/exception/InvalidGraphException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/exception/InvalidGraphException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/model/Algorithmus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/model/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AlgorithmusOverview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OverviewLayout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/RootLayout.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,7 +53,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/gkap$App.ic" NAME="App Coverage Results" MODIFIED="1543168109266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>application.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/gkap$All_in_gkap_test.ic" NAME="All in gkap_test Coverage Results" MODIFIED="1541428425162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="241" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -55,28 +70,29 @@
     <session id="954328278">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bat" value="5" />
           <entry key="dot" value="158" />
-          <entry key="gka" value="229" />
-          <entry key="gradle" value="16" />
+          <entry key="fxml" value="2" />
+          <entry key="gka" value="232" />
+          <entry key="gradle" value="17" />
           <entry key="gradlew" value="4" />
           <entry key="html" value="1" />
-          <entry key="java" value="246" />
+          <entry key="java" value="268" />
           <entry key="png" value="158" />
           <entry key="pom" value="1" />
         </counts>
@@ -84,29 +100,29 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Batch" value="2" />
-          <entry key="Groovy" value="16" />
+          <entry key="Groovy" value="17" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="158" />
-          <entry key="JAVA" value="246" />
-          <entry key="PLAIN_TEXT" value="237" />
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="268" />
+          <entry key="PLAIN_TEXT" value="240" />
+          <entry key="XML" value="3" />
           <entry key="dot file" value="157" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dot" value="19" />
-          <entry key="dummy" value="2" />
+          <entry key="dummy" value="23" />
           <entry key="gka" value="259" />
-          <entry key="gradle" value="155" />
-          <entry key="java" value="38363" />
+          <entry key="gradle" value="162" />
+          <entry key="java" value="40251" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="155" />
-          <entry key="JAVA" value="38363" />
-          <entry key="PLAIN_TEXT" value="261" />
+          <entry key="Groovy" value="162" />
+          <entry key="JAVA" value="40251" />
+          <entry key="PLAIN_TEXT" value="282" />
           <entry key="dot file" value="19" />
         </counts>
       </usages-collector>
@@ -191,7 +207,7 @@
     <favorites_list name="gkap" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -202,11 +218,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DefaultWeightedEdge</find>
-      <find>getedge</find>
-      <find>attributes</find>
-      <find>missing weight</find>
-      <find>readGKAFile</find>
       <find>utils.read</find>
       <find>vertexset</find>
       <find>next(</find>
@@ -226,12 +237,17 @@
       <find>setac</find>
       <find>System.o</find>
       <find>system.out.print</find>
-      <find>handleopen</find>
       <find>getresource</find>
       <find>reachableNodes</find>
       <find>display(</find>
       <find>handleshow</find>
       <find>handlesho</find>
+      <find>overview</find>
+      <find>setproper</find>
+      <find>handleopen</find>
+      <find>handleOpen</find>
+      <find>cell</find>
+      <find>startlabel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,14 +269,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="gkap_test" />
+              <option name="name" value="gkap" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="gkap_test" />
+                <option name="name" value="gkap" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -274,7 +290,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'gkap_test'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'gkap'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -284,7 +300,7 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'gkap_test'." />
+                <option name="description" value="Displays the sub-projects of root project 'gkap'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -294,12 +310,12 @@
                 <option name="name" value="classes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'gkap_test'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'gkap'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'gkap_test'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'gkap'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -319,17 +335,12 @@
                 <option name="name" value="javadoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Converts your src/main/graphviz/*.dot to build/graphviz/*.png" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="graphviz" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Assembles a jar archive containing the main classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="jar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'gkap_test'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'gkap'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -339,7 +350,7 @@
                 <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'gkap_test'." />
+                <option name="description" value="Displays the tasks runnable from root project 'gkap'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -359,7 +370,7 @@
                 <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'gkap_test'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'gkap'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -384,7 +395,7 @@
                 <option name="name" value="compileTestJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'gkap_test'." />
+                <option name="description" value="Displays all dependencies declared in root project 'gkap'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -409,7 +420,7 @@
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'gkap_test'." />
+                <option name="description" value="Displays the properties of root project 'gkap'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -420,11 +431,11 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6167466882109" />
+        <entry key="$PROJECT_DIR$" value="6167630683304" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="327598302" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3642073027" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2007532874" />
-        <entry key="$PROJECT_DIR$/settings.gradle" value="4220182506" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="2544956169" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -437,90 +448,13 @@
                   <entry key="$PROJECT_DIR$">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
-                        <option name="entries">
-                          <list>
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.com.simonharrer/gradle-graphviz-plugin/0.0.1/725bc712b4169e8a05b51e9a69f68136a647ed08/gradle-graphviz-plugin-0.0.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/guru.nidi/graphviz-java/0.5.1/965c69880e1bd711b9c0515d5525d0ed118b9210/graphviz-java-0.5.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-rasterizer/1.9/e661a5ca8f812032873a1083c8a88b49fa58e0c7/batik-rasterizer-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-codec/1.9/22656975185a8486e0493b269768d3d4fb44a4df/batik-codec-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.arnx/nashorn-promise/0.1.1/96cc495e4bb583382894e4f69e7d46305fc02f90/nashorn-promise-0.1.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_macosx_x86_64/4.6.0/70fa3b2e113fb13a4515a981b857a4a6575aeb22/j2v8_macosx_x86_64-4.6.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_linux_x86_64/4.6.0/e0168e46bfc13715d1b7b46504a8462754ed2f07/j2v8_linux_x86_64-4.6.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86_64/4.6.0/8dbb6f4a125af8ed02927b0526900b356040dba9/j2v8_win32_x86_64-4.6.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86/4.6.0/9a0d52d278d40ea29af831a3c96fb0b7497a8408/j2v8_win32_x86-4.6.0-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-exec/1.3/efd2543e352e55ce5a685eed6db8af028b737905/commons-exec-1.3-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/ffd0827a7c67d5915b7dc611afbda56a1f247191/jcl-over-slf4j-1.7.25-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.25/bcea1530927f59b5128841d3571f879ce3af2e86/jul-to-slf4j-1.7.25-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svgrasterizer/1.9/157c8dea25cb979ac634491c33b99baafd744fa1/batik-svgrasterizer-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/962153db4a9ea71b79d047dfd1b2a0d80d8f4739/slf4j-api-1.7.25-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-parser/1.9/3e9cb72531faab7f643b97687996a916b1972b39/batik-parser-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-transcoder/1.9/1608d334da23e0dd45a2b626fb8d9d00918cd659/batik-transcoder-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.9/be1e6daea2a214d3de6c6f070560974086d6baea/batik-awt-util-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-xml/1.9/d7ad29fc654d70f3174ffb393c236d79019a1ed4/batik-xml-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.3.04/d89105ccbe3fd823865330fd964233baf2b53e88/xml-apis-1.3.04-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-anim/1.9/ea2fc28cbe11ab267841e9291b001cc7381c3bdc/batik-anim-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-bridge/1.9/688165e0562485c36c7b9a3ba876ff042913b721/batik-bridge-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svggen/1.9/7ea7ce500519eaf9afb0f1cfbf0cbb732d3147f9/batik-svggen-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-util/1.9/4adb4cd58acfb4b27d4f1ca19c223ba323b33ef8/batik-util-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-css/1.9/39994d892857c45e5ca4770b5c12434ddae7a2ac/batik-css-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-dom/1.9/bb615e73b7443c3591dae6dce06f0ba20961b78d/batik-dom-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.9/52474f54aafbf9da93dce7b020beb795a64eb215/batik-svg-dom-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-gvt/1.9/2048fb3770faec2828f02711999a9f65d77c75c4/batik-gvt-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-script/1.9/61a40ddfe9c43e9946dcda9f2b4798e47e9932eb/batik-script-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-constants/1.9/169e3ea8513e5b52212bf877347a6785e5b5f003/batik-constants-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-i18n/1.9/f9bbd3be9470cad1d3fb5575fc54fc4a1512fb92/batik-i18n-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/xmlgraphics-commons/2.2/dff64d41ec575a0479df722a5cd08b1b9f1fa9a5/xmlgraphics-commons-2.2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.9/4127c3c00aa547c32a7a62e34c7aacc256105208/batik-ext-1.9-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xalan/xalan/2.7.2/fe9c3d37a49238fac9d4d6c4f5bbd8c334da787a/xalan-2.7.2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/1.3.1/10e13eb33d8c2c55a2517ca47d109626520e4e59/commons-io-1.3.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/8d3424a318e818f88568dfb3b55c58583364ba9/commons-logging-1.0.4-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xalan/serializer/2.7.2/fe9c3d37a49238fac9d4d6c4f5bbd8c334da787a/serializer-2.7.2-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.com.simonharrer/gradle-graphviz-plugin/0.0.1/1c8acd82ea3eac97c14b5174b31f4ef3e816850a/gradle-graphviz-plugin-0.0.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/guru.nidi/graphviz-java/0.5.1/f857ba4b9d597c9c985fa3c3e9e07d36b8eb21f1/graphviz-java-0.5.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-rasterizer/1.9/2959470e7fb025ea5a5a945664378bf94a6c2b5a/batik-rasterizer-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-codec/1.9/7d62a38b91622ce26b33244368effe26fa6f35da/batik-codec-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.arnx/nashorn-promise/0.1.1/3bae6bc4b167e0866dfb29aa9ff09ba55c6f0a52/nashorn-promise-0.1.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_macosx_x86_64/4.6.0/863d30016246f6d7356c88eaf36c3e924a2ffd3c/j2v8_macosx_x86_64-4.6.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_linux_x86_64/4.6.0/e9714fbde87cf371071f6533824564e7499435fa/j2v8_linux_x86_64-4.6.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86_64/4.6.0/49e1cc812d34b6019d2cafc36c67cd599889b26b/j2v8_win32_x86_64-4.6.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86/4.6.0/6b3844b935145691edfb2c674371c783df0804ab/j2v8_win32_x86-4.6.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-exec/1.3/8dfb9facd0830a27b1b5f29f84593f0aeee7773b/commons-exec-1.3.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/f8c32b13ff142a513eeb5b6330b1588dcb2c0461/jcl-over-slf4j-1.7.25.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.25/af5364cd6679bfffb114f0dec8a157aaa283b76/jul-to-slf4j-1.7.25.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svgrasterizer/1.9/32f6ffcb2f7a19fcf5684a2dd61933840e115fdc/batik-svgrasterizer-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-parser/1.9/1f57aca8fc9f47431bf637a34097e3797458a211/batik-parser-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-transcoder/1.9/46856c150c278ee2d0dfb400fcc09bd75d25aecb/batik-transcoder-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.9/855cbcf158a0ae62ce85f2705a9bfccd4e99ede7/batik-awt-util-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-xml/1.9/ea56fceb9d20e5edf416651135e027fc8fbdb45f/batik-xml-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.3.04/90b215f48fe42776c8c7f6e3509ec54e84fd65ef/xml-apis-1.3.04.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis-ext/1.3.04/41a8b86b358e87f3f13cf46069721719105aff66/xml-apis-ext-1.3.04.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-anim/1.9/bf5a87c6647e4b0c454facc0278c64f4199717fc/batik-anim-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-bridge/1.9/fb7509c68f90e64a45f8ceece187a211415640c1/batik-bridge-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svggen/1.9/2c401640b2006df659df1fd21888c7b8c3d3ecec/batik-svggen-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-util/1.9/c96247c6b0b4909b0a515577f67622e9190b8f8/batik-util-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-css/1.9/3eb0bdc9dedd2e33e7ace50e01eab16741fcb689/batik-css-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-dom/1.9/96e8edbf08358f84f7c9dc5778797203f0feb59c/batik-dom-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.9/c6535d0a6656f18706fbe68796cd803aae5d1ec6/batik-svg-dom-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-gvt/1.9/58fc30896e7afdcc1e5af4e557fcc0e735c5072a/batik-gvt-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-script/1.9/4476562c724df213cd44d4ee292e1438d04cb7a7/batik-script-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-constants/1.9/24cae622672dedddd18951b193a83c12bfe33241/batik-constants-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-i18n/1.9/c83bf01767ec26ad24df7277d2dc845c3f4fe0f2/batik-i18n-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/xmlgraphics-commons/2.2/89f22650b8b8a5ac91207bf58190df852d97415a/xmlgraphics-commons-2.2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.9/da90c9656f651df691c602285aa1ba40463326c1/batik-ext-1.9.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xalan/xalan/2.7.2/d55d3f02a56ec4c25695fe67e1334ff8c2ecea23/xalan-2.7.2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/1.3.1/b90b6ac57cf27a2858eaa490d02ba7945d18ca7b/commons-io-1.3.1.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/f029a2aefe2b3e1517573c580f948caac31b1056/commons-logging-1.0.4.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xalan/serializer/2.7.2/24247f3bb052ee068971393bdb83e04512bb1c3c/serializer-2.7.2.jar" />
-                          </list>
-                        </option>
                         <option name="path" value="$PROJECT_DIR$" />
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
                 </map>
               </option>
-              <option name="name" value="gkap_test" />
+              <option name="name" value="gkap" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/ant-1.9.11.jar" />
@@ -628,7 +562,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/Edge.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vertex.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/resources/graph07.gka" />
         <option value="$PROJECT_DIR$/src/test/resources/graph09.gka" />
         <option value="$PROJECT_DIR$/src/test/resources/graphUndirected.gka" />
@@ -659,6 +592,14 @@
         <option value="$PROJECT_DIR$/src/main/java/sample/algorithmen/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/MainApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/view/OverviewLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/application/model/Algorithmus.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/application/model/Algorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/algorithm/Parser.java" />
       </list>
     </option>
   </component>
@@ -678,45 +619,54 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="gkap_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkap_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="gkap_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkap_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gkap_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkap_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="gkap_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkap_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gkap_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gkap_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -725,7 +675,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543156006274" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543170590411" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -770,13 +720,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sample.MainApp" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="application.App" />
       <module name="gkap_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="application.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -854,6 +804,7 @@
       <workItem from="1543096566022" duration="169000" />
       <workItem from="1543096738095" duration="7252000" />
       <workItem from="1543142463946" duration="8453000" />
+      <workItem from="1543155961891" duration="7349000" />
     </task>
     <servers />
   </component>
@@ -890,7 +841,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174106000" />
+    <option name="totallyTimeSpent" value="181455000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,7 +855,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86132175" visible="true" weight="0.17110874" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86132175" visible="true" weight="0.20469083" />
       <window_info id="Favorites" order="1" sideWeight="0.5024233" side_tool="true" weight="0.13006397" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -913,7 +864,7 @@
       <window_info id="Structure" order="6" sideWeight="0.13867822" side_tool="true" weight="0.21588486" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.24918744" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.24918744" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -977,18 +928,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/graphviz/graph11.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/graphviz/graph10.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/graphviz/graph09.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/graphviz/graph08.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/graphviz/test.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1045,24 +984,11 @@
     <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="69" lean-forward="true" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/algorithmen/FordFulkerson.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/algorithmen/Algorithm.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/algorithmen/GraphTest.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/MainApp.java" />
-    <entry file="file://$PROJECT_DIR$/../gkap_graphstream/src/main/java/sample/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../gkap_graphstream/src/main/java/sample/App.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/Graph.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/GraphController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sample/sample.fxml" />
@@ -1077,29 +1003,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/AlgorithmusOverview.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="58" column="55" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/ShortestPathAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/exception/InvalidGraphException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/exception/InvalidGraphException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/GraphTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/GraphTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
@@ -1109,54 +1027,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="61" column="79" selection-start-line="61" selection-start-column="79" selection-end-line="61" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/Dijkstra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="30" column="92" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
-          <folding>
-            <element signature="method#Dijkstra#0;class#Dijkstra#0" />
-            <element signature="method#flagNodes#0;class#Dijkstra#0" />
-            <element signature="method#getNodeWithLowestDistance#0;class#Dijkstra#0" />
-            <element signature="method#evaluateNeighbors#0;class#Dijkstra#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/FloydWarschall.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/FloydWarschall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="121" column="82" lean-forward="true" selection-start-line="121" selection-start-column="82" selection-end-line="121" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/Algorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
             <element signature="method#checkNodes#0;class#Algorithm#0" />
             <element signature="method#turnPaths#0;class#Algorithm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/model/Algorithmus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
-          <folding>
-            <element signature="e#2399#2400#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1168,65 +1052,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/AlgorithmusOverviewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="76" column="36" lean-forward="true" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="method#Graph#0;class#Graph#0" />
-            <element signature="method#Graph#1;class#Graph#0" />
-            <element signature="method#makeGraph#0;class#Graph#0" />
-            <element signature="method#visualizeShortestPath#0;class#Graph#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/BreadthFirstSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="33" column="46" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="method#addEdges#0;class#BreadthFirstSearch#0" />
-            <element signature="method#getPrevNode#0;class#BreadthFirstSearch#0" />
-            <element signature="method#flagNodes#0;class#BreadthFirstSearch#0" />
-            <element signature="method#flagNodes#1;class#BreadthFirstSearch#0" />
-            <element signature="method#getNextNode#0;class#BreadthFirstSearch#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-          <folding>
-            <element signature="method#MainApp#0;class#MainApp#0" />
-            <element signature="method#start#0;class#MainApp#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sample/algorithmen/ShortestPathTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/ShortestPathTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
@@ -1245,6 +1071,146 @@
             <element signature="method#testNormalGraph#0;class#ShortestPathTest#0" />
             <element signature="method#testBigGraph#0;class#ShortestPathTest#0" />
             <element signature="method#getSmallMultiGraph#0;class#ShortestPathTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/OverviewLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="35" column="54" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/model/Algorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <element signature="method#start#0;class#App#0" />
+            <element signature="method#initRootLayout#0;class#App#0" />
+            <element signature="method#initOverviewLayout#0;class#App#0" />
+            <element signature="method#showGraphEditDialog#0;class#App#0" />
+            <element signature="e#4141#4142#0" expanded="true" />
+            <element signature="e#4177#4178#0" expanded="true" />
+            <element signature="e#4300#4301#0" expanded="true" />
+            <element signature="e#4344#4345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#OverviewLayoutController#0" />
+            <element signature="method#setInstance#0;class#OverviewLayoutController#0" />
+            <element signature="method#setLabels#0;class#OverviewLayoutController#0" />
+            <element signature="method#pathToString#0;class#OverviewLayoutController#0" />
+            <element signature="method#handleShowGraph#0;class#OverviewLayoutController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleOpen#0;class#RootLayoutController#0" />
+            <element signature="method#loadGraphfromFile#0;class#RootLayoutController#0" />
+            <element signature="method#handleRun#0;class#RootLayoutController#0" />
+            <element signature="method#isInputValid#0;class#RootLayoutController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph07.gka">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph08.gka">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph09.gka">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graphstream/gs-core/1.3/2d66dc5dd3fe52e32948617341bed9805486829b/gs-core-1.3-sources.jar!/org/graphstream/graph/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="637" column="12" selection-start-line="637" selection-start-column="12" selection-end-line="637" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+          <folding>
+            <element signature="method#Graph#0;class#Graph#0" />
+            <element signature="method#makeGraph#0;class#Graph#0" />
+            <element signature="method#visualizeShortestPath#0;class#Graph#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding>
+            <element signature="method#Dijkstra#0;class#Dijkstra#0" />
+            <element signature="method#getShortestPath#0;class#Dijkstra#0" />
+            <element signature="method#flagNodes#0;class#Dijkstra#0" />
+            <element signature="method#getNodeWithLowestDistance#0;class#Dijkstra#0" />
+            <element signature="method#evaluateNeighbors#0;class#Dijkstra#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/BreadthFirstSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getShortestPath#0;class#BreadthFirstSearch#0" />
+            <element signature="method#addEdges#0;class#BreadthFirstSearch#0" />
+            <element signature="method#getPrevNode#0;class#BreadthFirstSearch#0" />
+            <element signature="method#flagNodes#0;class#BreadthFirstSearch#0" />
+            <element signature="method#flagNodes#1;class#BreadthFirstSearch#0" />
+            <element signature="method#getNextNode#0;class#BreadthFirstSearch#0" />
           </folding>
         </state>
       </provider>

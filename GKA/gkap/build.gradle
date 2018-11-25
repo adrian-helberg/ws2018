@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id "com.simonharrer.graphviz" version "0.0.1"
 }
 
 group 'de.haw'
@@ -19,4 +18,6 @@ dependencies {
     compile group: 'org.graphstream', name: 'gs-core', version: '1.3'
     // https://mvnrepository.com/artifact/org.graphstream/gs-algo
     compile group: 'org.graphstream', name: 'gs-algo', version: '1.3'
+    // https://mvnrepository.com/artifact/org.graphstream/gs-ui
+    compile group: 'org.graphstream', name: 'gs-ui', version: '1.3'
 }
