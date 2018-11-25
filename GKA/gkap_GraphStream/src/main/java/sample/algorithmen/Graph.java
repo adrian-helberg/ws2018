@@ -8,48 +8,25 @@ import org.graphstream.graph.Node;
 import org.graphstream.graph.Path;
 import org.graphstream.graph.implementations.MultiGraph;
 
+/**
+ * Graph
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class Graph {
+	static final String uiStyle = "ui.style";
+	private static final String uiColorRed = "fill-color: red;";
+	static final String uiColorblue = "fill-color: blue;";
+	static final String uiName = "ui.label";
+	static final String index = "i";
+	static final String distance = "distance";
+	static final String prevNode = "prevNode";
+	static final String walkTrough = "walkTrough";
+	private MultiGraph graph;
 
-	// Attributbezeichner fuer den Stil eines Pfades
-	public static final String uiStyle = "ui.style";
-
-	// Markierung von Knoten und Pfaden
-	public static final String uiColorRed = "fill-color: red;";
-	public static final String uiColorblue = "fill-color: blue;";
-
-	// Gewichte fuer Knoten und Kanten
-	public static final String weight = "weight";
-
-	// Name von Knoten und Kanten
-	public static final String uiName = "ui.label";
-
-	// Index von Knoten und Kanten
-	public static final String index = "i";
-
-	// Distanz zwischen beliebigen Knoten
-	public static final String distance = "distance";
-	
-	// Vorgaengerknoten in einem Graphen
-	public static final String prevNode = "prevNode";
-	
-	// Maximal moeglicher Durchfluss
-	public static final String maxFlow = "maxFlow";
-	
-	// Aktueller Wert eines Durchflusses
-	public static final String currentFlow = "currentFlow";
-	
-	// Boolean, ist die Flussrichtung des vorigen knotens positiv?
-	public static final String prevNodePositive = "prevNodePositive";
-	
-	// Darf die Kante passiert werden?
-	public static final String walkTrough = "walkTrough";
-
-	private MultiGraph _graph;
-
-	public Graph(String name) { //TODO SCHNITTSTELLE HIER WIRD DER GRAPH GELADEN
-		_graph = new MultiGraph(name);
-		_graph.setStrict(false); // Weist doppelte Eingabe von Knoten nicht ab
-		_graph.setAutoCreate(true); // Knoten automatisch mit Kanten hinzufuegen
+	public Graph(String name) {
+		graph = new MultiGraph(name);
+		graph.setStrict(false);
+		graph.setAutoCreate(true);
 	}
 	
 	public Graph(String name, int nodes, int edges, boolean bigGraph) {
@@ -64,14 +41,13 @@ public class Graph {
 		ArrayList<Node> nodeList = new ArrayList<>();
 		for (int i = 1; i <= nodes; i++) {
 			nodeName = "" + i;
-			_graph.addNode(nodeName);
-			Node node = _graph.getNode(nodeName);
+			graph.addNode(nodeName);
+			Node node = graph.getNode(nodeName);
 			node.addAttribute(Graph.uiName, nodeName);
 			node.addAttribute(Graph.uiStyle, Graph.uiColorblue);
 			nodeList.add(node);
 		}
-		Random randomWeight = new Random(); // Nicht zu gro�es Intervall f�r die Kantengewichtung
-													// damit mehrere k�rzeste Pfade erstellt werden k�nnte.
+		Random randomWeight = new Random();
 		Random randomNode = new Random();
 		Node from;
 		Node to;
@@ -84,8 +60,8 @@ public class Graph {
 			if (!(from.hasEdgeBetween(to))) {
 				edgeWeight = randomWeight.nextInt(edges * 5);
 				edgeWeightString = "" + edgeWeight;
-				_graph.addEdge(edgeWeightString, from, to, directed);
-				Edge edge = _graph.getEdge(edgeWeightString);
+				graph.addEdge(edgeWeightString, from, to, directed);
+				Edge edge = graph.getEdge(edgeWeightString);
 				edge.addAttribute(Graph.distance, edgeWeight);
 				edge.addAttribute(Graph.uiStyle, Graph.uiColorblue);
 				edge.addAttribute(Graph.walkTrough, true);
@@ -94,26 +70,22 @@ public class Graph {
 	}
 
 	public MultiGraph getMultiGraph() {
-		return _graph;
-	}
-	
-	public void setMultiGraph(MultiGraph graph) {
-		_graph = graph;
+		return graph;
 	}
 
-	public static void printPathEdges(Path path) {
+	private static void printPathEdges(Path path) {
 		System.out.println("Pfadlaenge: " + path.getEdgeCount());
 		for (Edge edge : path.getEdgePath()) {
 			System.out.println(edge.getId());
 		}
 	}
-//
-	public void showGraph(List<Path> pathList) {
+
+	void showGraph(List<Path> pathList) {
 		for (Path path : pathList) {
 			visualizeShortestPath(path);
 			Graph.printPathEdges(path);
 		}
-		_graph.display();
+		graph.display();
 	}
 	public MultiGraph makeGraph(List<Path> pathList) {
 		for (Path path : pathList) {
@@ -121,16 +93,9 @@ public class Graph {
 			Graph.printPathEdges(path);
 		}
 		//_graph.display();
-		return _graph;
+		return graph;
 	}
 
-
-	/**
-	 * Markiert den kuerzesten Pfad durch den Graphen
-	 * 
-	 * @param path
-	 *            Ein Pfad
-	 */
 	private void visualizeShortestPath(Path path) {
 		List<Edge> edgePath = path.getEdgePath();
 		List<Node> nodePath = path.getNodePath();

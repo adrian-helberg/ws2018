@@ -9,7 +9,11 @@ import org.graphstream.graph.Path;
 import org.graphstream.graph.implementations.MultiGraph;
 
 import sample.exception.InvalidGraphException;
-
+/**
+ * BFS
+ * @author Maxmilian Janzen & Adrian Helberg
+ *
+ */
 public class BreadthFirstSearch extends ShortestPathAlgorithm {
 
 	public BreadthFirstSearch(MultiGraph graph) {

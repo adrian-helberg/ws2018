@@ -20,11 +20,12 @@ public class Dijkstra extends ShortestPathAlgorithm {
 	/**
 	 * Initialisiert einen Dijkstra-Algorithmus
 	 * @param graph Zu durchsuchender Graph
+	 * @author Maximilian Janzen & Adrian Helberg
 	 */
 	public Dijkstra(MultiGraph graph) {
 		_graph = graph;
-		_unSettledNodes = new HashSet<Node>();
-		_settledNodes = new HashSet<Node>();
+		_unSettledNodes = new HashSet<>();
+		_settledNodes = new HashSet<>();
 	}
 	
 	@Override

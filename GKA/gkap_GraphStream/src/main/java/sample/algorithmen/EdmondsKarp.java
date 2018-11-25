@@ -10,7 +10,7 @@ import sample.exception.InvalidGraphException;
 /**
  * For a more high level description, see Ford�Fulkerson algorithm.
  * Quelle: https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
- *
+ * @author Maximilian Janzen & Adrian Helberg
  */
 public class EdmondsKarp extends MaxFlowAlgorithm {
 	

@@ -13,6 +13,9 @@ import org.graphstream.graph.Edge;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
 
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class Parser {
 
 	private final static String _source = "source";
@@ -42,6 +45,7 @@ public class Parser {
 	 *            Pfad zur Datei
 	 * @return MultiGraph
 	 * @throws IOException
+	 *
 	 */
 	public MultiGraph parseFromFile(String fileName) throws IOException {
 		File file = new File(fileName); // Einzulesende Datei

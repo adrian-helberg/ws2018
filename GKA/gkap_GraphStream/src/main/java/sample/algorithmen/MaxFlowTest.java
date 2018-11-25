@@ -8,6 +8,9 @@ import org.graphstream.graph.implementations.MultiGraph;
 import org.junit.Test;
 import sample.exception.InvalidGraphException;
 
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class MaxFlowTest {
 
 	@Test

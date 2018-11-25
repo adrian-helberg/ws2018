@@ -13,6 +13,9 @@ import org.junit.Test;
 
 import sample.exception.InvalidGraphException;
 
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class ShortestPathTest {
 	Graph _graph;
 	MultiGraph _multiGraph;

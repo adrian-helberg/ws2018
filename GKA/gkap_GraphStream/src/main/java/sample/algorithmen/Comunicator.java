@@ -9,7 +9,11 @@ import java.util.List;
 import org.graphstream.graph.Path;
 
 import sample.exception.InvalidGraphException;
-
+/**
+ * Communikator
+ * @author Maxmilian Janzen & Adrian Helberg
+ *
+ */
 public class Comunicator {
 	private Graph _graph;
 	private Parser _parser;

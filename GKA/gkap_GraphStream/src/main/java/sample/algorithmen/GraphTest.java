@@ -10,6 +10,9 @@ import org.graphstream.graph.implementations.MultiGraph;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class GraphTest {
 
 	private Graph graph;
@@ -39,7 +42,7 @@ public class GraphTest {
 			System.out.println("Fehler beim Lesen der Datei: " + e.getMessage());
 			e.printStackTrace();
 		}
-		assertEquals(multiGraph.getNodeCount(), 12);  // Testet die korrekte Anzahl der Knoten
+		assertEquals(multiGraph.getNodeCount(), 14);  // Testet die korrekte Anzahl der Knoten
 		assertEquals(multiGraph.getEdgeCount(), 39);	 // Testet die korrekte Anzahl der Kanten
 		assertEquals(multiGraph.getNode("f").getEdgeSet().size(), 4);	// Testet die korrekte Anzahl an Kanten fuer Knoten f
 		Edge edge = multiGraph.getEdge(0);

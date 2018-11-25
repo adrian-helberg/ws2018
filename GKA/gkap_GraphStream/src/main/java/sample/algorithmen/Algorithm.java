@@ -13,7 +13,7 @@ import sample.exception.InvalidGraphException;
 
 /**
  * Adstrakte Klasse mit den Basisfunktionen fuer Algorithmen
- * @author Karsten
+ * @author Maxmilian Janzen & Adrian Helberg
  *
  */
 public abstract class Algorithm {

@@ -1,5 +1,8 @@
 package sample.algorithmen;
 
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class Start {
 
 	public static void main(String[] args) {

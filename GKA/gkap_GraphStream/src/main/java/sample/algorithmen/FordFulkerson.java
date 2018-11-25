@@ -8,7 +8,9 @@ import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
 
 import sample.exception.InvalidGraphException;
-
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public class FordFulkerson extends MaxFlowAlgorithm {
 	
 	private HashSet<Integer> _unSettledNodes; // Markierte, noch nicht inspizierte Knoten

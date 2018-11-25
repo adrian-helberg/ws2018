@@ -9,6 +9,9 @@ import org.graphstream.graph.implementations.MultiGraph;
 
 import sample.exception.InvalidGraphException;
 
+/**
+ * @author Maximilian Janzen & Adrian Helberg
+ */
 public abstract class MaxFlowAlgorithm extends Algorithm {
 	
 	protected int[][] _capacities;
