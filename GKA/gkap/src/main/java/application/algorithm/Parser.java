@@ -35,7 +35,7 @@ public class Parser {
 		_graph = graph;
 	}
 
-	MultiGraph parseFromFile(String fileName) throws IOException {
+	public MultiGraph parseFromFile(String fileName) throws IOException {
 		File file = new File(fileName);
 		List<String> input;
 		input = Files.lines(file.toPath(), Charset.forName("iso_8859_1")).map(s -> s.replaceAll("\\s+", ""))

@@ -34,6 +34,8 @@ public class App extends Application {
         algorithmList.add(new Algorithm("Breadth First Search"));
         algorithmList.add(new Algorithm("Dijkstra"));
         algorithmList.add(new Algorithm("Floyd Warschall"));
+        algorithmList.add(new Algorithm("Ford Fulkerson"));
+        algorithmList.add(new Algorithm("Edmonds Karp"));
     }
 
     @Override

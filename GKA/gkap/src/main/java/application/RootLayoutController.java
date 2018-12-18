@@ -1,5 +1,6 @@
 package application;
 
+import application.test.MaxFlowAlgorithm;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -10,7 +11,6 @@ import application.algorithm.*;
 import application.exception.InvalidGraphException;
 import application.model.Algorithm;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,11 +19,11 @@ import java.util.List;
  * @author Adrian Helberg
  * @author Maximilian Janzen
  */
+@SuppressWarnings("Duplicates")
 public class RootLayoutController {
     private App app;
     private Graph graph = new Graph("graph");
     private Parser parser = new Parser(graph.getMultiGraph());
-    private ArrayList<ShortestPathAlgorithm> shortestPathAlgorithmList = new ArrayList<>();
 
     void setInstance(App instance) {
         this.app = instance;
@@ -72,88 +72,86 @@ public class RootLayoutController {
         }
 
         String name;
+        application.algorithm.Algorithm currentAlgorithm = null;
+
         if (isInputValid()) {
             // Process algorithms
             for (Algorithm o : app.getAlgorithmData()) {
                 name = o.getAlgorithm();
 
                 if (name.contains("Breadth")) {
-                    shortestPathAlgorithmList.add(new BreadthFirstSearch(graph.getMultiGraph()));
+                    currentAlgorithm = new BreadthFirstSearch(graph.getMultiGraph());
                 } else if (name.contains("Dijkstra")) {
-                    shortestPathAlgorithmList.add(new Dijkstra(graph.getMultiGraph()));
+                    currentAlgorithm = new Dijkstra(graph.getMultiGraph());
                 } else if (name.contains("Floyd")) {
-                    shortestPathAlgorithmList.add(new FloydWarschall(graph.getMultiGraph()));
-                } else {
+                    currentAlgorithm = new FloydWarschall(graph.getMultiGraph());
+                } else if (name.contains("Ford")) {
+                    currentAlgorithm = new application.test.FordFulkerson(graph.getMultiGraph());
+                } else if (name.contains("Edmonds")) {
+                    currentAlgorithm = new application.test.EdmondsKarp(graph.getMultiGraph());
+                }
+
+                if (currentAlgorithm == null) {
                     System.out.println("Could not identify algorithm: " + name);
                 }
 
-                for (ShortestPathAlgorithm algorithm : shortestPathAlgorithmList) {
+                if (currentAlgorithm instanceof ShortestPathAlgorithm)
+                {
+                    List<Path> paths = null;
+
                     try {
-                        // Compute shortest paths
-                        List<Path> paths = algorithm.getShortestPath(startField.getText(), endField.getText());
-
-                        // Set properties
-                        o.setGraph(graph);
-                        o.setPath(paths);
-                        o.setSource(startField.getText());
-                        o.setTarget(endField.getText());
-                        o.setTime(algorithm.getStringTimeMilliseconds() + ", " +
-                                algorithm.getStringTimeNanoseconds());
-                        o.setAccess(Integer.toString(algorithm.getGraphTouches()));
-                        o.setDistance(Integer.toString(algorithm.getTotalDistance()));
-
+                        paths = ((ShortestPathAlgorithm)currentAlgorithm).getShortestPath(startField.getText(), endField.getText());
                     } catch (InvalidGraphException e) {
-
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Could not edit graph values");
-                        alert.setContentText("Graph value class error:\n" + e.getMessage());
-
                         e.printStackTrace();
-
-                        TextArea textArea = new TextArea(e.getStackTrace().toString());
-                        textArea.setEditable(false);
-                        textArea.setWrapText(true);
-                        textArea.setMaxWidth(Double.MAX_VALUE);
-                        textArea.setMaxHeight(Double.MAX_VALUE);
-                        GridPane.setVgrow(textArea, Priority.ALWAYS);
-                        GridPane.setHgrow(textArea, Priority.ALWAYS);
-
-                        GridPane expContent = new GridPane();
-                        expContent.setMaxWidth(Double.MAX_VALUE);
-                        expContent.add(textArea, 0, 1);
-
-                        alert.getDialogPane().setExpandableContent(expContent);
-                        alert.showAndWait();
-                    } catch (Exception e){
-                         Alert alert = new Alert(Alert.AlertType.ERROR);
-                         alert.setTitle("Error");
-                         alert.setHeaderText("Runtime error");
-                         alert.setContentText("Something went wrong");
-
-                         e.printStackTrace();
-
-                         TextArea textArea = new TextArea(e.getStackTrace().toString());
-                         textArea.setEditable(false);
-                         textArea.setWrapText(true);
-
-                         textArea.setMaxWidth(Double.MAX_VALUE);
-                         textArea.setMaxHeight(Double.MAX_VALUE);
-                         GridPane.setVgrow(textArea, Priority.ALWAYS);
-                         GridPane.setHgrow(textArea, Priority.ALWAYS);
-
-                         GridPane expContent = new GridPane();
-                         expContent.setMaxWidth(Double.MAX_VALUE);
-                         expContent.add(textArea, 0, 1);
-                         // Set expandable Exception into the dialog pane.
-                         alert.getDialogPane().setExpandableContent(expContent);
-
-                         alert.showAndWait();
                     }
+
+                    // Set properties
+                    o.setGraph(graph);
+                    o.setPath(paths);
+                    o.setSource(startField.getText());
+                    o.setTarget(endField.getText());
+                    o.setTime(currentAlgorithm.getStringTimeMilliseconds() + ", " +
+                            currentAlgorithm.getStringTimeNanoseconds());
+                    o.setAccess(Integer.toString(currentAlgorithm.getGraphTouches()));
+
+                    int distance = ((ShortestPathAlgorithm) currentAlgorithm).getTotalDistance();
+                    o.setDistance("" + distance);
                 }
-                shortestPathAlgorithmList.clear();
+                else if (currentAlgorithm instanceof application.test.MaxFlowAlgorithm)
+                {
+                    try {
+                        o.setMaxFlow("" + ((application.test.MaxFlowAlgorithm)currentAlgorithm).getMaxFlow(startField.getText(), endField.getText()));
+                    } catch (InvalidGraphException e) {
+                        e.printStackTrace();
+                    }
+
+                    // Set properties
+                    o.setGraph(graph);
+                    o.setSource(startField.getText());
+                    o.setTarget(endField.getText());
+                    o.setTime(currentAlgorithm.getStringTimeMilliseconds() + ", " +
+                            currentAlgorithm.getStringTimeNanoseconds());
+                    o.setAccess(Integer.toString(currentAlgorithm.getGraphTouches()));
+                }
             }
         }
+    }
+
+    private void handleTextArea(Exception e, Alert alert) {
+        TextArea textArea = new TextArea(e.getStackTrace().toString());
+        textArea.setEditable(false);
+        textArea.setWrapText(true);
+        textArea.setMaxWidth(Double.MAX_VALUE);
+        textArea.setMaxHeight(Double.MAX_VALUE);
+        GridPane.setVgrow(textArea, Priority.ALWAYS);
+        GridPane.setHgrow(textArea, Priority.ALWAYS);
+
+        GridPane expContent = new GridPane();
+        expContent.setMaxWidth(Double.MAX_VALUE);
+        expContent.add(textArea, 0, 1);
+
+        alert.getDialogPane().setExpandableContent(expContent);
+        alert.showAndWait();
     }
 
     /**

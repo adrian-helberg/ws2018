@@ -29,6 +29,8 @@ public class OverviewLayoutController {
     private Label accessLabel;
     @FXML
     private Label distanceLabel;
+    @FXML
+    private Label maxFlowLabel;
 
     private App app;
 
@@ -57,6 +59,7 @@ public class OverviewLayoutController {
             accessLabel.setText(algo.getAccesses());
             pathTextArea.setText(pathToString(algo.getPath()));
             distanceLabel.setText(algo.getDistance());
+            maxFlowLabel.setText(algo.getMaxFlow());
         } else {
             startLabel.setText("n/a");
             endLabel.setText("n/a");
@@ -64,10 +67,14 @@ public class OverviewLayoutController {
             accessLabel.setText("n/a");
             pathTextArea.setText("n/a");
             distanceLabel.setText("n/a");
+            maxFlowLabel.setText("n/a");
         }
     }
 
     private String pathToString(List<Path> algoList){
+
+        if (algoList == null) return "n/a";
+
         int max = algoList.size();
         int i = 0;
         String concat = "";

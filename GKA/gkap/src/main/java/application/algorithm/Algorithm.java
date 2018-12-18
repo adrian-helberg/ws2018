@@ -16,7 +16,7 @@ import application.exception.InvalidGraphException;
  * @author Maxmilian Janzen
  */
 public abstract class Algorithm {
-	MultiGraph graph;
+	protected MultiGraph graph;
 	private long timeMilliseconds;
 	private long timeNanoseconds;
 	private int graphTouched = 0;
@@ -24,7 +24,7 @@ public abstract class Algorithm {
 	/**
 	 * Set current time
 	 */
-	void startTimer() {
+	protected void startTimer() {
 		timeMilliseconds = System.currentTimeMillis();
 		timeNanoseconds = System.nanoTime();
 	}
@@ -32,7 +32,7 @@ public abstract class Algorithm {
 	/**
 	 * Set passed time
 	 */
-	void stopTimer() {
+	protected void stopTimer() {
 		timeMilliseconds = System.currentTimeMillis() - timeMilliseconds;
 		timeNanoseconds = System.nanoTime() - timeNanoseconds;
 	}
@@ -59,7 +59,7 @@ public abstract class Algorithm {
 	 * @param to Target node
 	 * @throws InvalidGraphException If invalid nodes or graph
 	 */
-	boolean checkNodes(String from, String to) throws InvalidGraphException {
+	protected boolean checkNodes(String from, String to) throws InvalidGraphException {
 
 		if (graph != null) {
 			AStar aStar = new AStar(graph);

@@ -19,7 +19,7 @@ public class Graph {
 	static final String uiColorblue = "fill-color: blue;";
 	static final String uiName = "ui.label";
 	static final String index = "i";
-	static final String distance = "distance";
+	public static final String distance = "distance";
 	static final String prevNode = "prevNode";
 	static final String walkTrough = "walkTrough";
 	private MultiGraph graph;
@@ -82,6 +82,8 @@ public class Graph {
 	}
 
 	public MultiGraph makeGraph(List<Path> pathList) {
+		if (pathList == null) return graph;
+
 		for (Path path : pathList) {
 			visualizeShortestPath(path);
 		}

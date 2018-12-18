@@ -20,6 +20,7 @@ public class Algorithm {
     private final SimpleStringProperty time;
     private final SimpleStringProperty access;
     private final SimpleStringProperty distance;
+    private final SimpleStringProperty maxFlow;
     private final SimpleObjectProperty<Graph> graph;
     private final SimpleObjectProperty<List<Path>> path;
 
@@ -30,6 +31,7 @@ public class Algorithm {
         this.time = new SimpleStringProperty("n/a");
         this.access = new SimpleStringProperty("n/a");
         this.distance = new SimpleStringProperty("n/a");
+        this.maxFlow = new SimpleStringProperty("n/a");
         this.graph = new SimpleObjectProperty<>(null);
         this.path = new SimpleObjectProperty<>(null);
     }
@@ -90,6 +92,15 @@ public class Algorithm {
 
     public void setDistance(String distance) {
         this.distance.set(distance);
+    }
+
+    // --- Max Flow
+    public String getMaxFlow() {
+        return maxFlow.get();
+    }
+
+    public void setMaxFlow(String maxFlow) {
+        this.maxFlow.set(maxFlow);
     }
 
     // --- Graph
