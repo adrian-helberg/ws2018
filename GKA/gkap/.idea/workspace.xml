@@ -2,54 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85efe1b4-aeed-4ba5-a773-3341cc55fe83" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gkap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gkap.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/App$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/App$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/App$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/OverviewLayoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/OverviewLayoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/RootLayoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/RootLayoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/algorithm/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/algorithm/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/algorithm/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/algorithm/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/algorithm/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/algorithm/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/application/model/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/model/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/AlgorithmusOverviewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/GraphController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/MainApp$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/MainApp$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/MainApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/RootLayoutController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Algorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/BreadthFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Comunicator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Dijkstra.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/EdmondsKarp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/FloydWarschall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/FordFulkerson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Graph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/GraphTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Mark.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/MaxFlowAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/MaxFlowTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/ShortestPathAlgorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/ShortestPathTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/algorithmen/Start.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/exception/InvalidGraphException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gkap_test/sample/model/Algorithmus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/view/OverviewLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/view/OverviewLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/algorithm/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/algorithm/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/algorithm/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/model/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/model/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/OverviewLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/OverviewLayout.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -83,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="method#MaxFlowAlgorithm#0;class#MaxFlowAlgorithm#0" />
                 <element signature="method#getMaxFlow#0;class#MaxFlowAlgorithm#0" />
@@ -96,10 +49,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#417#448#0" expanded="true" />
                 <element signature="method#testSmallGraph#0;class#MaxFlowTest#0" />
                 <element signature="method#testGraph4#0;class#MaxFlowTest#0" />
                 <element signature="method#testNetworkGraph#0;class#MaxFlowTest#0" />
@@ -112,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/test/FordFulkerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="323">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FordFulkerson#0;class#FordFulkerson#0" />
@@ -127,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/test/EdmondsKarp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="81" column="4" lean-forward="true" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+            <state relative-caret-position="476">
+              <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#findPath#0;class#EdmondsKarp#0" />
@@ -254,6 +206,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,8 +260,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,7 +306,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MaxFlowTest">
+  <component name="RunManager" selected="Application.App">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -421,8 +373,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MaxFlowTest" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.MaxFlowTest" />
       </list>
     </recent_temporary>
   </component>
@@ -465,6 +417,7 @@
       <workItem from="1543175326719" duration="1406000" />
       <workItem from="1544687287789" duration="17069000" />
       <workItem from="1545157604909" duration="8848000" />
+      <workItem from="1545166931448" duration="697000" />
     </task>
     <servers />
   </component>
@@ -501,7 +454,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208778000" />
+    <option name="totallyTimeSpent" value="209475000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,7 +468,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86132175" visible="true" weight="0.21108742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86132175" visible="true" weight="0.21321961" />
       <window_info id="Favorites" order="1" sideWeight="0.5024233" side_tool="true" weight="0.13006397" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -907,32 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/FordFulkerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#FordFulkerson#0;class#FordFulkerson#0" />
-            <element signature="method#findPath#0;class#FordFulkerson#0" />
-            <element signature="method#evaluateNeighbors#0;class#FordFulkerson#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/EdmondsKarp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="81" column="4" lean-forward="true" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findPath#0;class#EdmondsKarp#0" />
-            <element signature="method#flagNodes#0;class#EdmondsKarp#0" />
-            <element signature="method#flagNodes#1;class#EdmondsKarp#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graphstream/gs-core/1.3/2d66dc5dd3fe52e32948617341bed9805486829b/gs-core-1.3-sources.jar!/org/graphstream/graph/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -955,7 +882,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="method#MaxFlowAlgorithm#0;class#MaxFlowAlgorithm#0" />
             <element signature="method#getMaxFlow#0;class#MaxFlowAlgorithm#0" />
@@ -963,13 +890,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/FordFulkerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FordFulkerson#0;class#FordFulkerson#0" />
+            <element signature="method#findPath#0;class#FordFulkerson#0" />
+            <element signature="method#evaluateNeighbors#0;class#FordFulkerson#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/EdmondsKarp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#findPath#0;class#EdmondsKarp#0" />
+            <element signature="method#flagNodes#0;class#EdmondsKarp#0" />
+            <element signature="method#flagNodes#1;class#EdmondsKarp#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#417#448#0" expanded="true" />
             <element signature="method#testSmallGraph#0;class#MaxFlowTest#0" />
             <element signature="method#testGraph4#0;class#MaxFlowTest#0" />
             <element signature="method#testNetworkGraph#0;class#MaxFlowTest#0" />
