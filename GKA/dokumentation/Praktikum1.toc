@@ -1,8 +1,0 @@
-\select@language {german}
-\contentsline {section}{\numberline {1}Organisation}{2}{section.1}
-\contentsline {section}{\numberline {2}Algorithmen}{2}{section.2}
-\contentsline {section}{\numberline {3}Datenstrukturen}{2}{section.3}
-\contentsline {section}{\numberline {4}Entwurfsentscheidungen}{2}{section.4}
-\contentsline {section}{\numberline {5}Umsetzung}{2}{section.5}
-\contentsline {section}{\numberline {6}Tests}{2}{section.6}
-\contentsline {section}{\numberline {7}Fragestellung}{2}{section.7}

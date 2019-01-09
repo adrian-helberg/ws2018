@@ -86,9 +86,9 @@ public class RootLayoutController {
                 } else if (name.contains("Floyd")) {
                     currentAlgorithm = new FloydWarschall(graph.getMultiGraph());
                 } else if (name.contains("Ford")) {
-                    currentAlgorithm = new application.test.FordFulkerson(graph.getMultiGraph());
+                    currentAlgorithm = new NewFordFulkerson(graph.getMultiGraph(), startField.getText(), endField.getText());
                 } else if (name.contains("Edmonds")) {
-                    currentAlgorithm = new application.test.EdmondsKarp(graph.getMultiGraph());
+                    currentAlgorithm = new NewEdmondKarp(graph.getMultiGraph(), startField.getText(), endField.getText());
                 }
 
                 if (currentAlgorithm == null) {

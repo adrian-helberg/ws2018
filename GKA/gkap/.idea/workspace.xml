@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="85efe1b4-aeed-4ba5-a773-3341cc55fe83" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/application/RootLayoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/RootLayoutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/application/algorithm/EdmondsKarp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/application/algorithm/FordFulkerson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/application/algorithm/MaxFlowAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/application/algorithm/MaxFlowAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/algorithm/EdmondsKarp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/algorithm/FordFulkerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/algorithm/MaxFlowAlgorithm.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -32,60 +40,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowAlgorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
-              <folding>
-                <element signature="method#MaxFlowAlgorithm#0;class#MaxFlowAlgorithm#0" />
-                <element signature="method#getMaxFlow#0;class#MaxFlowAlgorithm#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/NewFordFulkerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testSmallGraph#0;class#MaxFlowTest#0" />
-                <element signature="method#testGraph4#0;class#MaxFlowTest#0" />
-                <element signature="method#testNetworkGraph#0;class#MaxFlowTest#0" />
-                <element signature="method#testVeryBigGraph#0;class#MaxFlowTest#0" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="20" column="56" lean-forward="true" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/application/test/FordFulkerson.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/RootLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="113">
+              <caret line="83" column="55" lean-forward="true" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#FordFulkerson#0;class#FordFulkerson#0" />
-                <element signature="method#findPath#0;class#FordFulkerson#0" />
-                <element signature="method#evaluateNeighbors#0;class#FordFulkerson#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/application/test/EdmondsKarp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#findPath#0;class#EdmondsKarp#0" />
-                <element signature="method#flagNodes#0;class#EdmondsKarp#0" />
-                <element signature="method#flagNodes#1;class#EdmondsKarp#0" />
+                <element signature="method#handleOpen#0;class#RootLayoutController#0" />
+                <element signature="method#loadGraphfromFile#0;class#RootLayoutController#0" />
+                <element signature="method#handleTextArea#0;class#RootLayoutController#0" />
+                <element signature="method#isInputValid#0;class#RootLayoutController#0" />
               </folding>
             </state>
           </provider>
@@ -102,8 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>System.o</find>
-      <find>system.out.print</find>
       <find>getresource</find>
       <find>reachableNodes</find>
       <find>display(</find>
@@ -132,6 +104,8 @@
       <find>new ford</find>
       <find>inspecte</find>
       <find>getNode</find>
+      <find>graph.get</find>
+      <find>getAttribute</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,8 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Graph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Edge.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vertex.java" />
         <option value="$PROJECT_DIR$/src/test/resources/graph07.gka" />
         <option value="$PROJECT_DIR$/src/test/resources/graph09.gka" />
@@ -184,13 +156,15 @@
         <option value="$PROJECT_DIR$/src/main/java/application/algorithm/EdmondsKarp.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/algorithm/Graph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/algorithm/MaxFlowAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/algorithm/FordFulkerson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/test/MaxFlowAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/test/FordFulkerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/test/EdmondsKarp.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/test/MaxFlowTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/aufgabe3/NewFordFulkerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/algorithm/MaxFlowAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/aufgabe 3/MaxFlowAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/algorithm/FordFulkerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/RootLayoutController.java" />
       </list>
     </option>
   </component>
@@ -206,8 +180,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,6 +218,15 @@
               <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gkap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gkap" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -260,6 +241,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +251,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545166649127" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546806410129" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../gkap_test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -418,6 +401,10 @@
       <workItem from="1544687287789" duration="17069000" />
       <workItem from="1545157604909" duration="8848000" />
       <workItem from="1545166931448" duration="697000" />
+      <workItem from="1546702160179" duration="330000" />
+      <workItem from="1546703050465" duration="659000" />
+      <workItem from="1546704026484" duration="958000" />
+      <workItem from="1546805882562" duration="1120000" />
     </task>
     <servers />
   </component>
@@ -454,7 +441,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209475000" />
+    <option name="totallyTimeSpent" value="212542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,8 +454,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86132175" visible="true" weight="0.21321961" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86132175" visible="true" weight="0.2217484" />
       <window_info id="Favorites" order="1" sideWeight="0.5024233" side_tool="true" weight="0.13006397" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -541,15 +529,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/algorithmen/FordFulkerson.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/algorithmen/Algorithm.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/algorithmen/GraphTest.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/MainApp.java" />
     <entry file="file://$PROJECT_DIR$/../gkap_graphstream/src/main/java/sample/App.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/Graph.fxml" />
@@ -651,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/FloydWarschall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="52" column="32" lean-forward="true" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/IFlowAlgorithm.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/RootLayout.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -699,19 +671,6 @@
             <element signature="e#1443#1444#0" expanded="true" />
             <element signature="e#2429#2430#0" expanded="true" />
             <element signature="e#2472#2473#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#OverviewLayoutController#0" />
-            <element signature="method#setInstance#0;class#OverviewLayoutController#0" />
-            <element signature="method#handleShowGraph#0;class#OverviewLayoutController#0" />
           </folding>
         </state>
       </provider>
@@ -796,60 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/EdmondsKarp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/MaxFlowAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="181" column="9" selection-start-line="181" selection-start-column="9" selection-end-line="181" selection-end-column="9" />
-          <folding>
-            <element signature="method#getFlow#0;class#MaxFlowAlgorithm#0" />
-            <element signature="method#getFlow#1;class#MaxFlowAlgorithm#0" />
-            <element signature="method#setFlow#0;class#MaxFlowAlgorithm#0" />
-            <element signature="method#setFlow#1;class#MaxFlowAlgorithm#0" />
-            <element signature="method#getCapacity#0;class#MaxFlowAlgorithm#0" />
-            <element signature="method#getCapacity#1;class#MaxFlowAlgorithm#0" />
-            <element signature="method#setCapacity#0;class#MaxFlowAlgorithm#0" />
-            <element signature="method#setCapacity#1;class#MaxFlowAlgorithm#0" />
-            <element signature="method#setAllCapacities#0;class#MaxFlowAlgorithm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/FordFulkerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findPath#0;class#FordFulkerson#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#handleOpen#0;class#RootLayoutController#0" />
-            <element signature="method#loadGraphfromFile#0;class#RootLayoutController#0" />
-            <element signature="method#handleTextArea#0;class#RootLayoutController#0" />
-            <element signature="e#5805#5806#0" expanded="true" />
-            <element signature="method#isInputValid#0;class#RootLayoutController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -867,10 +772,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/aufgabe3/NewFordFulkerson.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testGraph4#0;class#MaxFlowTest#0" />
+            <element signature="method#testNetworkGraph#0;class#MaxFlowTest#0" />
+            <element signature="method#testVeryBigGraph#0;class#MaxFlowTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        <state relative-caret-position="901">
+          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
           <folding>
             <element signature="method#Graph#0;class#Graph#0" />
             <element signature="e#2228#2229#0" expanded="true" />
@@ -879,26 +805,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/MaxFlowAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="170">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <element signature="method#MaxFlowAlgorithm#0;class#MaxFlowAlgorithm#0" />
-            <element signature="method#getMaxFlow#0;class#MaxFlowAlgorithm#0" />
+            <element signature="method#getFlow#0;class#MaxFlowAlgorithm#0" />
+            <element signature="method#getFlow#1;class#MaxFlowAlgorithm#0" />
+            <element signature="method#setFlow#0;class#MaxFlowAlgorithm#0" />
+            <element signature="method#setFlow#1;class#MaxFlowAlgorithm#0" />
+            <element signature="method#getCapacity#0;class#MaxFlowAlgorithm#0" />
+            <element signature="method#getCapacity#1;class#MaxFlowAlgorithm#0" />
+            <element signature="method#setCapacity#0;class#MaxFlowAlgorithm#0" />
+            <element signature="method#setCapacity#1;class#MaxFlowAlgorithm#0" />
+            <element signature="method#setAllCapacities#0;class#MaxFlowAlgorithm#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/test/FordFulkerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="136">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#FordFulkerson#0;class#FordFulkerson#0" />
-            <element signature="method#findPath#0;class#FordFulkerson#0" />
-            <element signature="method#evaluateNeighbors#0;class#FordFulkerson#0" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -916,17 +848,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/test/MaxFlowTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/FloydWarschall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="304">
+          <caret line="112" column="51" selection-start-line="112" selection-start-column="51" selection-end-line="112" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/NewEdmondKarp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graphstream/gs-core/1.3/2d66dc5dd3fe52e32948617341bed9805486829b/gs-core-1.3-sources.jar!/org/graphstream/graph/implementations/MultiGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/MaxFlowAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#testSmallGraph#0;class#MaxFlowTest#0" />
-            <element signature="method#testGraph4#0;class#MaxFlowTest#0" />
-            <element signature="method#testNetworkGraph#0;class#MaxFlowTest#0" />
-            <element signature="method#testVeryBigGraph#0;class#MaxFlowTest#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/OverviewLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#OverviewLayoutController#0" />
+            <element signature="method#setInstance#0;class#OverviewLayoutController#0" />
+            <element signature="method#handleShowGraph#0;class#OverviewLayoutController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/FordFulkerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/EdmondsKarp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="83" column="55" lean-forward="true" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleOpen#0;class#RootLayoutController#0" />
+            <element signature="method#loadGraphfromFile#0;class#RootLayoutController#0" />
+            <element signature="method#handleTextArea#0;class#RootLayoutController#0" />
+            <element signature="method#isInputValid#0;class#RootLayoutController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/algorithm/NewFordFulkerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="56" lean-forward="true" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
         </state>
       </provider>
     </entry>
