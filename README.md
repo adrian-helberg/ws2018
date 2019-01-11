@@ -17,7 +17,8 @@ Computergrafik
 	* YouTube Videos
 
 RN
-	* Einschreibeschlüssen angefragt
+	* Einschreibeschlüssen angefragt, erledigt
+		Vorbereitung steht aus
 	* Altklausuren
 
 GKA
